@@ -12,9 +12,11 @@ class ClientController extends Controller
         
         return view('client', compact('clients'));
     }
+
     public function create(){
         return view('create_client');
     }
+
     public function store(Request $request){
         $request->validate([
             'img' => 'nullable',
@@ -43,4 +45,9 @@ class ClientController extends Controller
 
         
     }
+
+    public function show($id){
+        return view('show_client');
+    }
+
 }

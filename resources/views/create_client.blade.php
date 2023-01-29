@@ -9,7 +9,7 @@
             <h1>dropzone here</h1>
         </div>
     </form>
-    <form action="{{ route('client.store') }}" method="POST" class="bg-white p-5 rounded-xl">
+    <form action="{{ route('client.store') }}" method="POST" class="bg-white p-5 rounded-xl shadow-xl">
         @csrf
         <div id="institution_information">
             <h1 class="text-xl">Datos de la institucion</h1>
