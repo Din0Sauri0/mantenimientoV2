@@ -29,7 +29,7 @@
                     <div class="text-sm"><a href="mailto:{{$client->email}}">Correo: {{ $client->email }}</a></div>
                 </div>
                 <div class="p-2 w-full flex justify-end text-xl">
-                    <a href="#">ir ></a>
+                    <a href="{{ route('client.show', $client->id) }}">ir ></a>
                 </div>
             </div>
         </div>

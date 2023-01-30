@@ -14,7 +14,7 @@
         <nav class='bg-orange-400 text-white xl:w-1/6 lg:w-1/6 md:w-1/6 sm:w-1/6 xl:h-full lg:h-full md:full sm:h-full flex flex-col'>
             <div class='w-full flex justify-between p-3'>
                 <div>
-                    <img class='w-20 h-15 lg:w-60 lg:h-35' src="{{ asset('img/logo.png') }}" alt="">
+                    <img class="rounded-full" src="{{ asset('img/logo2.png') }}" alt="">
                 </div>
                 <div onclick='openMenu()' class='lg:hidden xl:hidden sm:hidden'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

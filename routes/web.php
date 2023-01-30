@@ -37,6 +37,11 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/cliente', 'index')->name('client')->middleware('auth');
     Route::get('/registrar_cliente', 'create')->name('client.create')->middleware('auth');
     Route::post('/registrar_cliente', 'store')->name('client.store')->middleware('auth');
+    Route::get('/cliente/{id}', 'show')->name('client.show')->middleware('auth');
+    Route::get('/cliente/editar/{id}', 'edit')->name('client.edit')->middleware('auth');
+    Route::patch('/cliente/editar/{id}', 'update')->name('client.update')->middleware('auth');
+    Route::delete('/cliente/{id}', 'delete')->name('client.delete')->middleware('auth');
+
 });
 Route::controller(WorkerController::class)->group(function(){
     Route::get('/trabajadores', 'index')->name('worker')->middleware('auth');
