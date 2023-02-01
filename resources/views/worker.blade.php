@@ -3,5 +3,95 @@
     
 @endsection
 @section('content')
-    
+<div class="p-5 flex flex-col gap-5">
+    <div>
+        <a href="{{ route('worker.create') }}" class="bg-orange-500 p-2 text-white rounded-xl">Agregar</a>
+    </div>
+    <div class="flex flex-col gap-2 2xl:grid 2xl:grid-cols-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2">
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+            <div class="p-2 w-full flex justify-end text-xl">
+                <a href="#">ir ></a>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-2">
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h1 class="text-xl">Gustavo Ovalle</h1>
+                    <div class="text-sm">Direccion: Psj. Carlos Droguett #7845</div>
+                    <div class="text-sm">Rut: 19.908.736-3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
 @endsection

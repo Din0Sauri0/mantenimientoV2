@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('last_name');
             $table->boolean('admin')->default(false);
+            $table->timestamps();
             $table->unsignedBigInteger('user_reference');
             $table->unsignedBigInteger('company_reference');
             

@@ -9,7 +9,6 @@ class ClientController extends Controller
 {
     public function index(){
         $clients = Client::all();
-        
         return view('client', compact('clients'));
     }
 
@@ -37,7 +36,7 @@ class ClientController extends Controller
         $client->contact_last_name = $request->contact_last_name;
         $client->contact_number = $request->contact_number;
         $client->email = $request->email;
-        $client->company_reference = auth()->user()->id;
+        $client->company_reference = session('company_reference');
         $client->save();
 
         return redirect()->route('client');
@@ -73,7 +72,7 @@ class ClientController extends Controller
         $client->contact_last_name = $request->contact_last_name;
         $client->contact_number = $request->contact_number;
         $client->email = $request->email;
-        $client->company_reference = auth()->user()->id;
+        $client->company_reference = session('company_reference');
         $client->save();
 
         return redirect()->route('client.show', $client->id);
