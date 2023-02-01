@@ -5,7 +5,7 @@
 @section('content')
 <div class="p-5 flex flex-col gap-5">
     <div>
-        <a href="{{ route('client.create') }}" class="bg-orange-500 p-2 text-white rounded-xl">Agregar</a>
+        <a href="{{ route('client.create') }}" class="bg-orange-500 p-2 text-white rounded-xl"></a>Agregar</a>
     </div>
     <div class="flex flex-col gap-2 2xl:grid 2xl:grid-cols-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2">
         @foreach ($clients as $client)
