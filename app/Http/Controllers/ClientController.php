@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClientController extends Controller
 {
     public function index(){
-        $clients = Client::all();
+        $clients = Client::where('company_reference', '=', session('company_reference'))->get();
         return view('client', compact('clients'));
     }
 
