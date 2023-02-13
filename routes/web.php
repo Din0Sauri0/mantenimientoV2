@@ -47,6 +47,10 @@ Route::controller(WorkerController::class)->middleware(['auth'])->group(function
     Route::get('/trabajadores', 'index')->name('worker');
     Route::get('/registrar_trabajdor', 'create')->name('worker.create');
     Route::post('/registrar_trabajador', 'store')->name('worker.store');
+    Route::get('/trabajador/{id}', 'show')->name('worker.show');
+    Route::delete('/trabajador/{id}', 'delete')->name('worker.delete');
+    Route::get('/trabajador/editar/{id}', 'edit')->name('worker.edit');
+    Route::patch('/trabajador/editar/{id}', 'update')->name('worker.update');
 });
 
 

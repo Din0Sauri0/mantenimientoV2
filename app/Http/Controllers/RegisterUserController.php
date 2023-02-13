@@ -16,13 +16,14 @@ class RegisterUserController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'id' => 'required',
-            'name' => 'required',
-            'address' => 'required',
-            'email' => 'required|email',
+            'id' => 'required| min:8| max:9| unique:users',
+            'name' => 'required| min:3| max:50',
+            'address' => 'required| min:4| max:100',
+            'email' => 'required|email|min:10| max:120| unique:users',
             'password' => 'required',
 
         ]);
+
         $user = new User();
         $company = new Company();
 

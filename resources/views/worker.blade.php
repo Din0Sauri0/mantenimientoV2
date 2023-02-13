@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="p-2 w-full flex justify-end text-xl">
-                <a href="#">ir ></a>
+                <a href="{{ route('worker.show', $user['id']) }}">ir ></a>
             </div>
         </div>
         @endforeach

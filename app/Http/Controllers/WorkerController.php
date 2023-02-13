@@ -65,4 +65,71 @@ class WorkerController extends Controller
         return redirect()->route('worker');
 
     }
+
+    public function show($id){
+        $worker = Worker::findOrFail($id);
+        $user = User::findOrFail($id);
+        $worker_data = [
+            'id' => $worker->id,
+            'name' => $user->name,
+            'last_name' => $worker->last_name,
+            'email' => $user->email,
+            'password' => $user->password,
+            'admin' => $worker->admin
+        ];
+
+        return view('show_worker', compact('worker_data'));
+    }
+
+    public function edit($id){
+        $worker = Worker::findOrFail($id);
+        $user = User::findOrFail($id);
+        $worker_data = [
+            'id' => $worker->id,
+            'name' => $user->name,
+            'last_name' => $worker->last_name,
+            'email' => $user->email,
+            'password' => $user->password,
+            'admin' => $worker->admin
+        ];
+        return view('edit_worker', compact('worker_data'));
+
+    }
+
+    public function update($id, Request $request){
+        $worker = Worker::findOrFail($id);
+        $user = User::findOrFail($id);
+
+        $request->validate([
+            'rut' => 'nullable',
+            'name' => 'nullable',
+            'last_name' => 'nullable',
+            'email' => 'nullable',
+            'admin' => 'nullable'
+        ]);
+        //dd($request);
+        $user->id = $request->rut;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        //$user->password = Hash::make($request->password);
+        
+        $worker->id = $request->rut;
+        $worker->last_name = $request->last_name;
+        $worker->admin = $request->boolean('admin');
+        $worker->user_reference = $user->id;
+        $worker->company_reference = session('company_reference');
+        
+        $user->save();
+        $worker->save();
+        return redirect()->route('worker');
+    }
+
+    public function delete($id){
+        $worker = Worker::find($id);
+        $user = User::find($id);
+        $worker->delete();
+        $user->delete();
+
+        return redirect()->route('worker');
+    }
 }
