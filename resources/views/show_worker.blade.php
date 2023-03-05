@@ -34,7 +34,7 @@
             <label for="admin">Tipo de usuario</label>
             <h1 class="text-2xl">@if($worker_data['admin'] = 1) Administrador @else Usuario @endif</h1>
         </div>
-        <div class="mb-6 text-white flex justify-around">
+        <div class="mb-6 text-white flex flex-col text-center gap-3">
             <a data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="bg-red-500 rounded-lg p-2.5">Eliminar</a>
             <a class="bg-yellow-400 rounded-lg p-2.5" href="{{ route('worker.edit', $worker_data['id']) }}">Editar</a>
         </div>

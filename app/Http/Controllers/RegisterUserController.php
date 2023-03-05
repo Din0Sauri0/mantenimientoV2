@@ -20,7 +20,7 @@ class RegisterUserController extends Controller
             'name' => 'required| min:3| max:50',
             'address' => 'required| min:4| max:100',
             'email' => 'required|email|min:10| max:120| unique:users',
-            'password' => 'required',
+            'password' => 'required|min:6|max:15',
 
         ]);
 

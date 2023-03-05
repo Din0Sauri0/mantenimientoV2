@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EquipmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +53,14 @@ Route::controller(WorkerController::class)->middleware(['auth'])->group(function
     Route::delete('/trabajador/{id}', 'delete')->name('worker.delete');
     Route::get('/trabajador/editar/{id}', 'edit')->name('worker.edit');
     Route::patch('/trabajador/editar/{id}', 'update')->name('worker.update');
+});
+
+Route::controller(ProductController::class)->middleware(['auth'])->group(function(){
+    Route::get('/productos', 'index')->name('product');
+    Route::get('/registrar_producto', 'create')->name('product.create');
+    Route::post('/registrar_producto', 'store')->name('product.store');
+    Route::get('/producto/{model}', 'show')->name('product.show');
+    Route::delete('/producto/{model}', 'delete')->name('product.delete');
 });
 
 

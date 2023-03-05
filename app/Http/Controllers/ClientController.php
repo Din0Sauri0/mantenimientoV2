@@ -20,13 +20,13 @@ class ClientController extends Controller
     public function store(Request $request){
         $request->validate([
             'img' => 'nullable',
-            'company_name' => 'nullable',
-            'address' => 'required',
-            'giro' => 'nullable',
-            'contact_name' => 'required',
-            'contact_last_name' => 'required',
-            'contact_number' => 'required',
-            'email' => 'required'
+            'company_name' => 'required|min:5|max:100',
+            'address' => 'required|min:4|max:100',
+            'giro' => 'required|min:4|max:100',
+            'contact_name' => 'required|min:3|max:20',
+            'contact_last_name' => 'required|min:5|max:20',
+            'contact_number' => 'required|min:8|max:9',
+            'email' => 'required|email|min:10| max:120| unique:clients'
         ]);
         $client = new Client();
         $client->company_name = $request->company_name;
@@ -57,13 +57,13 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
         $request->validate([
             'img' => 'nullable',
-            'company_name' => 'nullable',
-            'address' => 'required',
-            'giro' => 'nullable',
-            'contact_name' => 'required',
-            'contact_last_name' => 'required',
-            'contact_number' => 'required',
-            'email' => 'required'
+            'company_name' => 'required|min:5|max:100',
+            'address' => 'required|min:4|max:100',
+            'giro' => 'required|min:4|max:100',
+            'contact_name' => 'required|min:3|max:20',
+            'contact_last_name' => 'required|min:5|max:20',
+            'contact_number' => 'required|min:8|max:9',
+            'email' => 'required|email|min:10| max:120'
         ]);
         $client->company_name = $request->company_name;
         $client->address = $request->address;

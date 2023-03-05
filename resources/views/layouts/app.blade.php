@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class='w-screen h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
+    <div class='w-screen lg:h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
         @auth
         <nav class='bg-orange-400 text-white xl:w-1/6 lg:w-1/6 md:w-1/6 sm:w-1/6 xl:h-full lg:h-full md:full sm:h-full flex flex-col'>
             <div class='w-full flex justify-between p-3'>
@@ -28,7 +27,7 @@
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('home') }}">Proyectos</a>
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('client') }}">Clientes</a>
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('worker') }}">Trabajadores</a>
-                    <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="">Equipos</a>
+                    <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('product') }}">Equipos</a>
                 </div>
                 <div>
                     <a href="{{ route('logout') }}" class='flex justify-end p-3 rounded-md text-red-900 hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start text-red'>
@@ -44,8 +43,9 @@
         @yield('content')
     </div>
 
-    <script src="../path/to/flowbite/dist/flowbite.js"></script>
-    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
+    
     <script>
     
         const openMenu = () => {

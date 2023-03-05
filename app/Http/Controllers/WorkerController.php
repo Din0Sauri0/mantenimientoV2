@@ -38,23 +38,23 @@ class WorkerController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'rut' => 'nullable',
-            'name' => 'nullable',
-            'last_name' => 'nullable',
-            'email' => 'nullable',
-            'password' => 'nullable',
-            'password_confirmation' => 'nullable',
+            'id' => 'required| min:8| max:9| unique:users',
+            'name' => 'required| min:3| max:20',
+            'last_name' => 'required| min:5|max:30',
+            'email' => 'required|email|min:10| max:120| unique:users',
+            'password' => 'required|min:6|max:15',
+            'password_confirmation' => 'required',
             'admin' => 'nullable'
         ]);
         //dd($request);
         $user = new User();
-        $user->id = $request->rut;
+        $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         
         $worker = new Worker();
-        $worker->id = $request->rut;
+        $worker->id = $request->id;
         $worker->last_name = $request->last_name;
         $worker->admin = $request->boolean('admin');
         $worker->user_reference = $user->id;
@@ -101,19 +101,19 @@ class WorkerController extends Controller
         $user = User::findOrFail($id);
 
         $request->validate([
-            'rut' => 'nullable',
-            'name' => 'nullable',
-            'last_name' => 'nullable',
-            'email' => 'nullable',
+            'id' => 'required|min:9|max:9',
+            'name' => 'required|min:3|max:20',
+            'last_name' => 'required|min:5|max:30',
+            'email' => 'required|email|min:10| max:120',
             'admin' => 'nullable'
         ]);
         //dd($request);
-        $user->id = $request->rut;
+        $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
         //$user->password = Hash::make($request->password);
         
-        $worker->id = $request->rut;
+        $worker->id = $request->id;
         $worker->last_name = $request->last_name;
         $worker->admin = $request->boolean('admin');
         $worker->user_reference = $user->id;

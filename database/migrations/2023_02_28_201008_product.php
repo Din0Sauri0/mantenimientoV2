@@ -1,4 +1,4 @@
- ite<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,19 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function(Blueprint $table){
-            $table->id();
-            $table->string('company_name');
-            $table->string('address');
-            $table->string('giro');
-            $table->string('contact_name');
-            $table->string('contact_last_name');
-            $table->string('contact_number');
-            $table->string('email');
+        Schema::create('products', function(Blueprint $table){
+            $table->string('model')->primary(); //modelo
+            $table->string('name');
+            $table->string('brand');
+            $table->integer('cantidad');
+            $table->string('part_number');
+            $table->string('specification');
             $table->timestamps();
-            //foreign atribute
+
             $table->unsignedBigInteger('company_reference');
-            //foreign key
             $table->foreign('company_reference')->references('id')->on('companies');
         });
     }
@@ -37,6 +34,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        //
+        Schema::dropIfExists('products');
     }
 };

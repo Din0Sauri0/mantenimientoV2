@@ -1,2 +1,1 @@
-import Dropzone from "dropzone";
-Dropzone.autoDiscover = false;
+import 'flowbite';
