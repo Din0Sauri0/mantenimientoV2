@@ -16,19 +16,11 @@
             <input type="text" id="brand" name="brand" placeholder="Hikvision" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('brand')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
             @error('brand')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
         </div>
-        <div class="mb-6 flex flex-row-reverse gap-5">
-            <div>
-                <label for="product_name" class="block mb-2 text-sm font-medium text-gray-900">Nombre del producto</label>
-                <input type="text" id="product_name" name="product_name" placeholder="Detector" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('product_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
-                @error('product_name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
-            </div>
-            <div>
-                <label for="cantidad" class="block mb-2 text-sm font-medium text-gray-900">Cantidad</label>
-                <input type="number" id="cantidad" name="cantidad" placeholder="12" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('cantidad')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
-                @error('cantidad')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
-            </div>
+        <div class="mb-6 flex flex-col">
+            <label for="product_name" class="block mb-2 text-sm font-medium text-gray-900">Nombre del producto</label>
+            <input type="text" id="product_name" name="product_name" placeholder="Detector" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('product_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
+            @error('product_name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
         </div>
-        
         <div class="mb-6 flex flex-row gap-5">
             <div>
                 <label for="model" class="block mb-2 text-sm font-medium text-gray-900">Modelo</label>

@@ -8,7 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\ProductItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,6 +61,10 @@ Route::controller(ProductController::class)->middleware(['auth'])->group(functio
     Route::post('/registrar_producto', 'store')->name('product.store');
     Route::get('/producto/{model}', 'show')->name('product.show');
     Route::delete('/producto/{model}', 'delete')->name('product.delete');
+});
+
+Route::controller(ProductItemController::class)->middleware(['auth'])->group(function(){
+    Route::post('/product_item', 'store')->name('product_item.store');
 });
 
 

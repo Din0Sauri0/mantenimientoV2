@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
+use App\Models\ProductItem;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,6 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->model = $request->model;
-        $product->cantidad = $request->cantidad;
         $product->brand = $request->brand;
         $product->name = $request->product_name;
         $product->part_number = $request->part_number;
@@ -39,11 +39,11 @@ class ProductController extends Controller
     }
     public function show($model){
         $product = Product::where('model', '=', $model)->get()->first();
-        return view('show_product', compact('product'));
+        $items = ProductItem::where('model', '=', $model)->where('company_reference', '=', session('company_reference'))->get();
+        return view('show_product', compact('product', 'items'));
     }
     public function delete($model){
         $product = Product::where('model', '=', $model)->first()->delete();
-
         return redirect()->route('product');
 
     }

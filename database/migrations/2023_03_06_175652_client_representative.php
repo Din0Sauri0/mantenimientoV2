@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function(Blueprint $table){
-            $table->string('model')->primary(); //modelo
+        Schema::create('client_representatives', function(Blueprint $table){
+            $table->id();
             $table->string('name');
-            $table->string('brand');
-            $table->string('part_number');
-            $table->string('specification');
+            $table->string('last_name');
+            $table->string('number');
+            $table->string('email');
             $table->timestamps();
 
-            $table->unsignedBigInteger('company_reference');
+            $table->unsignedInteger('company_reference');
+            $table->unsignedInteger('client_reference');
+
             $table->foreign('company_reference')->references('id')->on('companies');
+            $table->foreign('client_reference')->references('id')->on('clients');
         });
     }
 
@@ -34,6 +37,5 @@ return new class extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('products');
     }
 };
