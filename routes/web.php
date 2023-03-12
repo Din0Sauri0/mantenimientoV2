@@ -9,6 +9,8 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductItemController;
+use App\Http\Controllers\ClientRepresentativeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +46,9 @@ Route::controller(ClientController::class)->middleware(['auth'])->group(function
     Route::patch('/cliente/editar/{id}', 'update')->name('client.update');
     Route::delete('/cliente/{id}', 'delete')->name('client.delete');
 
+});
+Route::controller(ClientRepresentativeController::class)->middleware(['auth'])->group(function(){
+    Route::post('/cliente/representante', 'store')->name('client_representative.store');
 });
 Route::controller(WorkerController::class)->middleware(['auth'])->group(function(){
     Route::get('/trabajadores', 'index')->name('worker');

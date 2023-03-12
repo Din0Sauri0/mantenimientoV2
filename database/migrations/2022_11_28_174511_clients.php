@@ -18,10 +18,6 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('address');
             $table->string('giro');
-            $table->string('contact_name');
-            $table->string('contact_last_name');
-            $table->string('contact_number');
-            $table->string('email');
             $table->timestamps();
             //foreign atribute
             $table->unsignedBigInteger('company_reference');

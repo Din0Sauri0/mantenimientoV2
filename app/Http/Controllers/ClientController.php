@@ -23,19 +23,11 @@ class ClientController extends Controller
             'company_name' => 'required|min:5|max:100',
             'address' => 'required|min:4|max:100',
             'giro' => 'required|min:4|max:100',
-            'contact_name' => 'required|min:3|max:20',
-            'contact_last_name' => 'required|min:5|max:20',
-            'contact_number' => 'required|min:8|max:9',
-            'email' => 'required|email|min:10| max:120| unique:clients'
         ]);
         $client = new Client();
         $client->company_name = $request->company_name;
         $client->address = $request->address;
         $client->giro = $request->giro;
-        $client->contact_name = $request->contact_name;
-        $client->contact_last_name = $request->contact_last_name;
-        $client->contact_number = $request->contact_number;
-        $client->email = $request->email;
         $client->company_reference = session('company_reference');
         $client->save();
 

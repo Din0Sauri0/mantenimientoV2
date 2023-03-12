@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('email');
             $table->timestamps();
 
-            $table->unsignedInteger('company_reference');
-            $table->unsignedInteger('client_reference');
+            $table->unsignedBigInteger('company_reference');
+            $table->unsignedBigInteger('client_reference');
 
             $table->foreign('company_reference')->references('id')->on('companies');
             $table->foreign('client_reference')->references('id')->on('clients');

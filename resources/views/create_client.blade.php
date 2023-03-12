@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="representative_information">
-            <h1 class="text-xl">Datos del representante</h1>
+            {{-- <h1 class="text-xl">Datos del representante</h1>
             <div class="mb-2 flex flex-col gap-2">
                 <input class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="contact_name" id="contact_name" placeholder="Nombre">
                 @error('contact_name') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
@@ -42,8 +42,13 @@
                 <input class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="email" name="email" id="email" placeholder="Email">
                 @error('email') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
+        </div> --}}
+        <div class="mb-6 text-white flex justify-between gap-5">
+            <button class="bg-orange-500 hover:bg-orange-600 p-2 rounded-xl w-full text-white" type="submit">Registrar</button>
+            <a href="{{ route('client') }}" class="bg-yellow-400 rounded-lg p-3 w-full text-center">Cancelar</a>
         </div>
-        <button class="bg-orange-500 hover:bg-orange-600 p-2 rounded-xl w-full text-white" type="submit">Registrar</button>
+
+        
     </form>
     
 </div>

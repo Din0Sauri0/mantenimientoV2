@@ -21,12 +21,6 @@
                         <div class="text-sm">Giro: {{ $client->giro }}</div>
                     </div>
                 </div>
-                <div>
-                    <div class="text-xl">Datos del representante.</div>
-                    <div class="text-sm">{{ $client->contact_name }} {{ $client->contact_last_name }}</div>
-                    <div class="text-sm">contacto: {{ $client->contact_number }}</div>
-                    <div class="text-sm">correo: {{ $client->email }}</div>
-                </div>
                 <div class="p-2 w-full flex justify-end text-xl">
                     <a href="{{ route('client.show', $client->id) }}">ir ></a>
                 </div>
