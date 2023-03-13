@@ -24,7 +24,7 @@
     
             <div id='menu' class='h-full flex justify-between flex-col hidden p-3 xl:inline-flex lg:inline-flex sm:inline-flex'>
                 <div class='flex flex-col '>
-                    <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('home') }}">Proyectos</a>
+                    <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('project') }}">Proyectos</a>
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('client') }}">Clientes</a>
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('worker') }}">Trabajadores</a>
                     <a class='flex justify-end p-3 rounded-md hover:bg-orange-600 xl:justify-start lg:justify-start sm:justify-start' href="{{ route('product') }}">Equipos</a>

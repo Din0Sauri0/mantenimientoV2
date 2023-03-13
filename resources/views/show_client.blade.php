@@ -30,7 +30,7 @@
     
     <div class="flex flex-col">
         <button class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl" data-modal-target="representative_client" data-modal-toggle="representative_client">+</button>
-        <div class=" bg-green-500 relative overflow-auto shadow-md sm:rounded-lg">
+        <div class="relative overflow-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -50,19 +50,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($items as $key=>$value)
+                    @foreach ($representative as $key=>$value)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $key+1 }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $value->serial_number }}
+                            {{ $value->name }} {{ $value->last_name }}
                         </td>
                         <td class="px-6 py-4">
-                            <div class="@if ($value->state == 0) bg-red-400 w-24 @else bg-green-400 w-20 @endif  rounded-full p-1 text-white  text-center">@if ($value->state == 0) No instalado @else Instalado @endif</div>
+                            {{ $value->number }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $value->email }}
                         </td>
                     </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -88,6 +91,7 @@
             <div class="px-6 py-6 lg:px-8">
                 <form class="space-y-6" action="{{ route('client_representative.store') }}" method="POST">
                     @csrf
+                    <input type="hidden" value="{{ $client->id }}" name="client_id">
                     <div>
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
                         <input type="text" id="name" name="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>

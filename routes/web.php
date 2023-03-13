@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 //Controladores
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\LoginUserController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\ProductController;
@@ -23,7 +23,7 @@ use App\Http\Controllers\ClientRepresentativeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 Route::controller(RegisterUserController::class)->middleware(['guest'])->group(function (){
     Route::get('/registrar','index')->name('register');
@@ -71,5 +71,8 @@ Route::controller(ProductController::class)->middleware(['auth'])->group(functio
 Route::controller(ProductItemController::class)->middleware(['auth'])->group(function(){
     Route::post('/product_item', 'store')->name('product_item.store');
 });
-
+Route::controller(ProjectController::class)->middleware(['auth'])->group(function(){
+    Route::get('/proyectos', 'index')->name('project');
+    Route::get('/registrar_proyecto', 'create')->name('project.create');
+});
 

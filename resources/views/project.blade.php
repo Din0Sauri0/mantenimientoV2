@@ -5,7 +5,7 @@
 @section('content')
 <div class="p-5">
     <div>
-        <a href="#" class="bg-orange-500 hover:bg-orange-600 p-2 rounded-xl text-white flex justify-center">Agregar</a>
+        <a href="{{ route('project.create') }}" class="bg-orange-500 p-2 text-white rounded-full">Agregar</a>
     </div>
     <div class="bg-white p-2 rounded-xl drop-shadow-xl flex flex-col mt-5">
         <div class="grid grid-cols-3 justify-center items-center mb-2">

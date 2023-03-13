@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\ClientRepresentative;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -36,8 +37,9 @@ class ClientController extends Controller
 
     public function show($id){
         $client = Client::findOrFail($id);
+        $representative = ClientRepresentative::where([['company_reference', '=', session('company_reference')], ['client_reference', '=', $id]])->get();
 
-        return view('show_client', compact('client'));
+        return view('show_client', compact('client', 'representative'));
     }
 
     public function edit($id){

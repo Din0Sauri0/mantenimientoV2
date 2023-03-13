@@ -21,6 +21,8 @@ class ClientRepresentativeController extends Controller
         $client->last_name = $request->last_name;
         $client->number = $request->phone;
         $client->email = $request->email;
+        $client->company_reference = session('company_reference');
+        $client->client_reference = $request->client_id;
         $client->save();
 
 
