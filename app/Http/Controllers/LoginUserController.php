@@ -31,10 +31,10 @@ class LoginUserController extends Controller
             
             if($company_user_reference != null){
                 session(['company_reference' => $company_user_reference->user_reference]);
-                return redirect()->route('home');
+                return redirect()->route('project');
             }
             session(['company_reference' => $worker_company_reference->company_reference]);
-            return redirect()->route('home');
+            return redirect()->route('project');
         }
         return redirect()->route('login');
 

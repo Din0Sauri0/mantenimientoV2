@@ -34,9 +34,9 @@ Route::controller(LoginUserController::class)->middleware(['guest'])->group(func
     Route::post('/login','store')->name('login.post');
     Route::get('/logout','destroy')->name('logout');
 });
-Route::controller(HomeController::class)->middleware(['auth'])->group(function (){
-    Route::get('/home','index')->name('home');
-});
+// Route::controller(HomeController::class)->middleware(['auth'])->group(function (){
+//     Route::get('/home','index')->name('home');
+// });
 Route::controller(ClientController::class)->middleware(['auth'])->group(function(){
     Route::get('/cliente', 'index')->name('client');
     Route::get('/registrar_cliente', 'create')->name('client.create');
@@ -74,5 +74,7 @@ Route::controller(ProductItemController::class)->middleware(['auth'])->group(fun
 Route::controller(ProjectController::class)->middleware(['auth'])->group(function(){
     Route::get('/proyectos', 'index')->name('project');
     Route::get('/registrar_proyecto', 'create')->name('project.create');
+    Route::post('/registrar_proyecto', 'store')->name('project.store');
+    Route::get('/proyecto/{id}', 'show')->name('project.show');
 });
 

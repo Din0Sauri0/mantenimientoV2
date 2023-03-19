@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('company_reference');
             $table->unsignedBigInteger('client_reference');
             $table->unsignedBigInteger('client_representative');
+            $table->timestamps();
 
             $table->foreign('company_reference')->references('id')->on('companies');
             $table->foreign('client_reference')->references('id')->on('clients');

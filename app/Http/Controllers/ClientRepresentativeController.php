@@ -27,4 +27,10 @@ class ClientRepresentativeController extends Controller
 
 
     }
+
+
+    public function show($id){
+        $user = ClientRepresentative::where('client_reference', '=', $id)->get();
+        return $user;
+    }
 }

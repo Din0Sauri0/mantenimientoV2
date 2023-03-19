@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('scripts')
+@vite(['resources/js/delete_backdrop.js'])
+@endsection
 @section('title')
     {{ $worker_data['name']}} {{ $worker_data['last_name'] }}
 @endsection
@@ -59,11 +62,23 @@
                     <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                         Si, estoy seguro
                     </button>
-                    <button data-modal-hide="popup-modal" type="reset" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No, cancelar</button>
+                    <button id="cancel_btn" data-modal-hide="popup-modal" type="reset" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No, cancelar</button>
                 </div>
             </div>
         </div>
       </div>
 </form>
+
+{{-- <script>
+    const delete_backdrop = () => {
+        console.log('click');
+        let index = document.querySelectorAll('div[modal-backdrop]').length;
+        if(index > 1){
+            element = document.querySelector('div[modal-backdrop]');
+            element.parentNode.removeChild(element);
+            console.log(element);
+        }
+    }
+</script> --}}
     
 @endsection
