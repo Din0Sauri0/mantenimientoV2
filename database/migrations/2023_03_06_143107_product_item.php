@@ -23,6 +23,11 @@ return new class extends Migration
 
             $table->foreign('company_reference')->references('id')->on('companies');
             $table->foreign('model')->references('model')->on('products')->onDelete('cascade');
+            $table->foreignId('project_id')
+                ->nullable()
+                ->constrained('projects')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
 
