@@ -15,14 +15,18 @@ return new class extends Migration
     {
         Schema::create('product_items', function(Blueprint $table){
             $table->id();
-            $table->string('model');
             $table->string('serial_number');
-            $table->boolean('state')->default(false);
             $table->unsignedBigInteger('company_reference');
             $table->timestamps();
-
+    
             $table->foreign('company_reference')->references('id')->on('companies');
-            $table->foreign('model')->references('model')->on('products')->onDelete('cascade');
+            //$table->foreign('model')->references('model')->on('products')->onDelete('cascade');
+            $table->foreignId('product_id')
+                ->nullable()
+                ->constrained('products')
+                ->cascadeOnUPdate()
+                ->nullOnDelete();
+    
             $table->foreignId('project_id')
                 ->nullable()
                 ->constrained('projects')

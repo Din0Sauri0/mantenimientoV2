@@ -37,9 +37,8 @@ class ClientController extends Controller
 
     public function show($id){
         $client = Client::findOrFail($id);
-        $representative = ClientRepresentative::where([['company_reference', '=', session('company_reference')], ['client_reference', '=', $id]])->get();
 
-        return view('show_client', compact('client', 'representative'));
+        return view('show_client', compact('client'));
     }
 
     public function edit($id){

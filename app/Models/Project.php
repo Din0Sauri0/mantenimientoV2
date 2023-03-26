@@ -12,4 +12,12 @@ class Project extends Model
     public function items(){
         return $this->hasMany('App\Models\ProductItem');
     }
+
+    public function client(){
+        return $this->belongsTo('App\Models\Client');
+    }
+
+    public function agent(){
+        return $this->belongsTo('App\Models\ClientRepresentative');
+    }
 }

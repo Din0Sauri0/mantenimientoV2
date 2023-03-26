@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="text-clip max-w-xs overflow-y-scroll max-h-20">
-                <h1 class="text-sm">Modelo: {{ $product->model }}</h1>
+                <h1 class="text-sm">Modelo: {{ $product->id }}</h1>
                 <h1 class="text-sm">P/N: {{ $product->part_number }}</h1>
                 <h1 class="text-sm">Fecha de creacion: {{ $product->created_at }}</h1>
                 <h1 class="text-sm">Descripción.</h1>
@@ -28,7 +28,7 @@
             </div>
             
             <div class="flex flex-row-reverse">
-                <a href="{{ route('product.show', $product->model) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
+                <a href="{{ route('product.show', $product->id) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
             </div>
         </div>
         @endforeach

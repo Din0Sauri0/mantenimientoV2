@@ -18,13 +18,19 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->unsignedBigInteger('company_reference');
-            $table->unsignedBigInteger('client_reference');
-            $table->unsignedBigInteger('client_representative');
             $table->timestamps();
 
             $table->foreign('company_reference')->references('id')->on('companies');
-            $table->foreign('client_reference')->references('id')->on('clients');
-            $table->foreign('client_representative')->references('id')->on('client_representatives');
+            $table->foreignId('client_id')
+                ->nullable()
+                ->constrained('clients')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+            $table->foreignId('agent_id')
+                ->nullable()
+                ->constrained('client_representatives')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
 

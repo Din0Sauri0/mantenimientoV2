@@ -14,4 +14,12 @@ class Client extends Model
         'address',
         'giro',
     ];
+
+    public function agents(){
+        return $this->hasMany('App\Models\ClientRepresentative');
+    }
+
+    public function projects(){
+        return $this->hasMany('App\Models\Project');
+    }
 }

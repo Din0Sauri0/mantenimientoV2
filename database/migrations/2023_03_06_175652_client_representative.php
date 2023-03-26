@@ -22,12 +22,17 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('company_reference');
-            $table->unsignedBigInteger('client_reference');
 
             $table->foreign('company_reference')->references('id')->on('companies');
-            $table->foreign('client_reference')->references('id')->on('clients');
+
+            $table->foreignId('client_id')
+                ->nullable()
+                ->constrained('clients')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
+    
 
     /**
      * Reverse the migrations.

@@ -12,4 +12,8 @@ class ProductItem extends Model
     public function project(){
         return $this->belongsTo('App\Models\Project');
     }
+
+    public function product(){
+        return $this->belongsTo('App\Models\Product');
+    }
 }

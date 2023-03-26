@@ -28,8 +28,8 @@ class projectController extends Controller
         $project = new Project();
         $project->name = $request->name;
         $project->description = $request->description;
-        $project->client_reference = $request->client;
-        $project->client_representative = $request->client_repre;
+        $project->client_id = $request->client;
+        $project->agent_id = $request->client_repre;
         $project->company_reference = session('company_reference');
         $project->save();
     }

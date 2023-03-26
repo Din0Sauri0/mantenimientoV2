@@ -49,6 +49,7 @@ Route::controller(ClientController::class)->middleware(['auth'])->group(function
 });
 Route::controller(ClientRepresentativeController::class)->middleware(['auth'])->group(function(){
     Route::post('/cliente/representante', 'store')->name('client_representative.store');
+    Route::delete('/representante/{id}', 'delete')->name('client_representative.delete');
 });
 Route::controller(WorkerController::class)->middleware(['auth'])->group(function(){
     Route::get('/trabajadores', 'index')->name('worker');
@@ -64,12 +65,13 @@ Route::controller(ProductController::class)->middleware(['auth'])->group(functio
     Route::get('/productos', 'index')->name('product');
     Route::get('/registrar_producto', 'create')->name('product.create');
     Route::post('/registrar_producto', 'store')->name('product.store');
-    Route::get('/producto/{model}', 'show')->name('product.show');
-    Route::delete('/producto/{model}', 'delete')->name('product.delete');
+    Route::get('/producto/{id}', 'show')->name('product.show');
+    Route::delete('/producto/{id}', 'delete')->name('product.delete');
 });
 
 Route::controller(ProductItemController::class)->middleware(['auth'])->group(function(){
     Route::post('/product_item', 'store')->name('product_item.store');
+    Route::delete('/product_item/{id}', 'delete')->name('product_item.delete');
 });
 Route::controller(ProjectController::class)->middleware(['auth'])->group(function(){
     Route::get('/proyectos', 'index')->name('project');
