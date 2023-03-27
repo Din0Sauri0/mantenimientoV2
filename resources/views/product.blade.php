@@ -3,10 +3,13 @@
     Crear un producto
 @endsection
 @section('content')
-
 <div class="p-5 flex flex-col">
-    <div>
+    <div class="mb-5">
         <a href="{{ route('product.create') }}" class="bg-orange-500 p-2 text-white rounded-xl">Agregar</a>
+    </div>
+    <div class="flex flex-col justify-items-center max-w-xl p-6 bg-white rounded-lg shadow border-l-4 border-orange-400">
+        <h1 class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No se han encontrado productos.</h1>
+        <a class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline" href="">Pincha aqui! para crear uno nuevo</a>
     </div>
     <div class="w-full grid grid-cols-4 gap-5">
         @foreach ($products as $product)
@@ -20,7 +23,7 @@
                 </div>
             </div>
             <div class="text-clip max-w-xs overflow-y-scroll max-h-20">
-                <h1 class="text-sm">Modelo: {{ $product->id }}</h1>
+                <h1 class="text-sm">Modelo: {{ $product->model }}</h1>
                 <h1 class="text-sm">P/N: {{ $product->part_number }}</h1>
                 <h1 class="text-sm">Fecha de creacion: {{ $product->created_at }}</h1>
                 <h1 class="text-sm">Descripción.</h1>
@@ -28,7 +31,7 @@
             </div>
             
             <div class="flex flex-row-reverse">
-                <a href="{{ route('product.show', $product->id) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
+                <a href="{{ route('product.show', $product->model) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
             </div>
         </div>
         @endforeach

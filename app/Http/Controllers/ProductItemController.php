@@ -15,10 +15,11 @@ class ProductItemController extends Controller
             'state' => 'nullable',
         ]);
         $item = new ProductItem();
-        $item->product_id = $request->model;
+        $item->model = $request->model;
         $item->serial_number = $request->serial_number;
         $item->company_reference = session('company_reference');
         $item->save();
+        return redirect()->back();
     }
 
     public function delete($id){

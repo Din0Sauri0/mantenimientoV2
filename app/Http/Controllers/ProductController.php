@@ -26,7 +26,7 @@ class ProductController extends Controller
         ]);
 
         $product = new Product();
-        $product->id = $request->model;
+        $product->model = $request->model;
         $product->brand = $request->brand;
         $product->name = $request->product_name;
         $product->part_number = $request->part_number;
@@ -36,11 +36,10 @@ class ProductController extends Controller
 
         return redirect()->route('product');
     }
-    public function show($id){
-        $product = Product::findOrFail($id);
-        
-        //$items = ProductItem::where('mid', '=', $id)->where('company_reference', '=', session('company_reference'))->get();
-        return view('show_product', compact('product'));
+    public function show($model){
+        $product = Product::where('model', '=', $model)->get()->first();
+        $items = ProductItem::where('model', '=', $model)->where('company_reference', '=', session('company_reference'))->get();
+        return view('show_product', compact('product', 'items'));
     }
     public function delete($model){
         $product = Product::where('model', '=', $model)->first()->delete();

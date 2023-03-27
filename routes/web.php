@@ -65,7 +65,7 @@ Route::controller(ProductController::class)->middleware(['auth'])->group(functio
     Route::get('/productos', 'index')->name('product');
     Route::get('/registrar_producto', 'create')->name('product.create');
     Route::post('/registrar_producto', 'store')->name('product.store');
-    Route::get('/producto/{id}', 'show')->name('product.show');
+    Route::get('/producto/{model}', 'show')->name('product.show');
     Route::delete('/producto/{id}', 'delete')->name('product.delete');
 });
 

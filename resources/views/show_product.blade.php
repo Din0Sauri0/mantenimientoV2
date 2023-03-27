@@ -63,7 +63,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($product->items as $key=>$value)
+                    @foreach ($items as $key=>$value)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $key+1 }}
@@ -165,7 +165,7 @@
                     @csrf
                     <div>
                         <label for="model" class="block mb-2 text-sm font-medium text-gray-900">Modelo</label>
-                        <input type="text" id="model" name="model" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('model')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' value="{{ $product->id }}">
+                        <input type="text" id="model" name="model" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('model')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' value="{{ $product->modelo }}">
                         @error('model')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                     </div>
                     <div>
