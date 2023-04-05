@@ -26,7 +26,7 @@ class ProductController extends Controller
         ]);
 
         $product = new Product();
-        $product->model = $request->model;
+        $product->model = strtoupper($request->model);
         $product->brand = $request->brand;
         $product->name = $request->product_name;
         $product->part_number = $request->part_number;
@@ -34,7 +34,7 @@ class ProductController extends Controller
         $product->company_reference = session('company_reference');
         $product->save();
 
-        return redirect()->route('product');
+        return redirect()->route('product')->with('msg', 'El producto ha sido creado satisfactoriamente');
     }
     public function show($model){
         $product = Product::where('model', '=', $model)->get()->first();
@@ -42,7 +42,7 @@ class ProductController extends Controller
         return view('show_product', compact('product', 'items'));
     }
     public function delete($model){
-        $product = Product::where('model', '=', $model)->first()->delete();
+        $product = Product::where('model', $model)->delete();
         return redirect()->route('product');
 
     }

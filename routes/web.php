@@ -66,12 +66,15 @@ Route::controller(ProductController::class)->middleware(['auth'])->group(functio
     Route::get('/registrar_producto', 'create')->name('product.create');
     Route::post('/registrar_producto', 'store')->name('product.store');
     Route::get('/producto/{model}', 'show')->name('product.show');
-    Route::delete('/producto/{id}', 'delete')->name('product.delete');
+    Route::delete('/producto/{model}', 'delete')->name('product.delete');
 });
 
 Route::controller(ProductItemController::class)->middleware(['auth'])->group(function(){
     Route::post('/product_item', 'store')->name('product_item.store');
     Route::delete('/product_item/{id}', 'delete')->name('product_item.delete');
+    Route::patch('/item/{id}', 'patch')->name('product_item.patch');
+    Route::patch('/item/delete/{id}', 'patch_delete')->name('product_item.patch_delete');
+    Route::patch('/item/update/location/{id}', 'patch_location')->name('product_item.patch_location');
 });
 Route::controller(ProjectController::class)->middleware(['auth'])->group(function(){
     Route::get('/proyectos', 'index')->name('project');

@@ -23,7 +23,6 @@ class WorkerController extends Controller
                         'last_name' => $worker->last_name,
                         'email' => $data->email,
                         'id' => $worker->id
-
                     ]
                 );
                 break;
@@ -62,7 +61,7 @@ class WorkerController extends Controller
         
         $user->save();
         $worker->save();
-        return redirect()->route('worker');
+        return redirect()->route('worker')->with('msg', 'El trabajador '.$worker->name.' '.$worker->last_name.' ha sido creado satisfactoriamente');
 
     }
 

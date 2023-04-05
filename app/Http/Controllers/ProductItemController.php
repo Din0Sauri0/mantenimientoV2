@@ -27,4 +27,26 @@ class ProductItemController extends Controller
         $item->delete();
         return redirect()->back();
     }
+
+    public function patch(Request $request, $id){
+        foreach($request->items as $item_id){
+            $item = ProductItem::findOrFail($item_id);
+            $item->project_id = $id;
+            $item->save();
+
+        }
+        return redirect()->back();
+    }
+    public function patch_delete($id){
+        $item = ProductItem::findOrFail($id);
+        $item->project_id = null;
+        $item->save();
+        return redirect()->back();
+    }
+    public function patch_location(Request $request, $id){
+        $item = ProductItem::findOrFail($id);
+        $item->location = $request->location;
+        $item->save();
+        return redirect()->back();
+    }
 }

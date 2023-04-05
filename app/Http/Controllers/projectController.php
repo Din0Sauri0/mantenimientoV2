@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Project;
+use App\Models\ProductItem;
 
 class projectController extends Controller
 {
@@ -32,10 +33,13 @@ class projectController extends Controller
         $project->agent_id = $request->client_repre;
         $project->company_reference = session('company_reference');
         $project->save();
+        return redirect()->route('project')->with('msg', 'El proyecto ha sido creado satisfactoriamente.');
     }
 
     public function show($id){
         $project = Project::findOrFail($id);
-        return view('show_project', compact('project'));
+        $items = ProductItem::all()->where('company_reference', '=', session('company_reference'));
+        //dd($products);
+        return view('show_project', compact('project', 'items'));
     }
 }

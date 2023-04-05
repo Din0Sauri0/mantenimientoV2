@@ -32,7 +32,7 @@ class ClientController extends Controller
         $client->company_reference = session('company_reference');
         $client->save();
 
-        return redirect()->route('client');
+        return redirect()->route('client')->with('msg', 'El cliente '.$client->company_name.' ha sido creado satisfactoriamente');
     }
 
     public function show($id){
