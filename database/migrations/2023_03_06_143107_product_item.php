@@ -18,15 +18,15 @@ return new class extends Migration
             $table->string('serial_number');
             $table->unsignedBigInteger('company_reference');
             $table->timestamps();
-            $table->string('model')->nullable();
             $table->string('location')->nullable();
+            $table->string('model');
             $table->foreign('company_reference')->references('id')->on('companies');
-            $table->foreign('model')->references('model')->on('products')->onDelete('set null')->onUpdate('cascade');
-            // $table->foreignId('product_id')
-            //     ->nullable()
-            //     ->constrained('products')
-            //     ->cascadeOnUPdate()
-            //     ->nullOnDelete();
+            //$table->foreign('model')->references('model')->on('products')->onDelete('set null')->onUpdate('cascade');
+            $table->foreignId('product_id')
+                ->nullable()
+                ->constrained('products')
+                ->cascadeOnUPdate()
+                ->nullOnDelete();
     
             $table->foreignId('project_id')
                 ->nullable()

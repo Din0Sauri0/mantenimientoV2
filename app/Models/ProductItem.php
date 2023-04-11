@@ -9,6 +9,13 @@ class ProductItem extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'serial_number',
+        'model',
+        'company_reference',
+        'product_id'
+    ];
+
     public function project(){
         return $this->belongsTo('App\Models\Project');
     }

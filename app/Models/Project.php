@@ -9,6 +9,13 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'client_id',
+        'agent_id'
+    ];
+
     public function items(){
         return $this->hasMany('App\Models\ProductItem');
     }

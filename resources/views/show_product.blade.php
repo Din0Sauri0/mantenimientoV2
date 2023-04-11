@@ -37,13 +37,28 @@
             </div>
             <div class="text-white flex flex-row justify-between gap-3 text-center mt-5">
                 <button data-modal-target="popup-modal-product-{{ $product->model }}" data-modal-toggle="popup-modal-product-{{ $product->model }}" class="bg-red-500 rounded-xl p-3 w-full">Eliminar</button>
-                <a class="bg-yellow-300 rounded-xl p-3 w-full" href="#">Modificar</a>
+                <button wire:click="update" data-modal-target="update-modal" data-modal-toggle="update-modal" class="bg-yellow-300 rounded-xl p-3 w-full" href="#">Modificar</button>
             </div>
         </div>
     </div>
     <div class="flex flex-col">
+        <div
+        class="flex justify-between">
+            <button data-modal-target="item-register" data-modal-toggle="item-register" class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl text-gray-500">+</button>
+            <div class="flex justify-center items-center gap-3">
+                <div class="bg-green-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
+                    Instalados: {{ $product->items->whereNotNull('project_id')->count() }}
+                </div>
+                <div class="bg-red-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
+                    No instalados: {{ $product->items->whereNull('project_id')->count() }}
+                </div>
+                <div class="bg-yellow-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
+                    total: {{ $product->items->count() }}
+                </div>
+            </div>
+        </div>
 
-        <button data-modal-target="item-register" data-modal-toggle="item-register" class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl text-gray-500">+</button>
+        
 
         <div class="relative overflow-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -63,7 +78,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($items as $key=>$value)
+                    @foreach ($product->items as $key=>$value)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $key+1 }}
@@ -75,7 +90,7 @@
                             <div class="@if ($value->project_id != null) bg-green-400 w-20 @else bg-red-400 w-24 @endif  rounded-full p-1 text-white  text-center">@if ($value->project_id != null) Instalado @else No instalado @endif</div>
                         </td>
                         <td>
-                            <button class="bg-yellow-300 p-1 rounded-lg">
+                            <button class="bg-yellow-300 p-1 rounded-lg" data-modal-target="item-update-{{ $value->id }}" data-modal-toggle="item-update-{{ $value->id }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -137,6 +152,7 @@
                             </div>
                         </div>
                     </form>
+                    @livewire('item-update', ['value' => $value])
                     @endforeach
                 </tbody>
             </table>
@@ -144,44 +160,7 @@
     </div>
 </div>
 
-<div id="item-register" tabindex="-1" aria-hidden="true"
-    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
-    <div class="relative w-full h-full max-w-md md:h-auto">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <button type="button"
-                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                data-modal-hide="item-register">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                </svg>
-                <span class="sr-only">Close modal</span>
-            </button>
-            <div class="px-6 py-6 lg:px-8">
-                <form class="space-y-6" action="{{ route('product_item.store') }}" method="POST">
-                    @csrf
-                    <div>
-                        <label for="model" class="block mb-2 text-sm font-medium text-gray-900">Modelo</label>
-                        <input type="text" id="model" name="model" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('model')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' value="{{ $product->modelo }}">
-                        @error('model')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
-                    </div>
-                    <div>
-                        <label for="serial_numver" class="block mb-2 text-sm font-medium text-gray-900">Numero de serie</label>
-                        <input type="text" id="serial_number" name="serial_number" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('serial_number')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' placeholder="G21798350">
-                        @error('serial_number')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
-                    </div>
-                    <div class="flex gap-2 text-white">
-                        <button class="bg-orange-500 rounded-lg p-2.5 w-full" type="submit">Guardar</button>
-                        <button data-modal-hide="item-register" class="bg-yellow-400 rounded-lg p-2.5 w-full" type="reset">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@livewire('item-create', ['product' => $product])
 
 <form action="{{ route('product.delete', $product->model) }}" method="POST">
     @csrf
@@ -225,6 +204,8 @@
         </div>
     </div>
 </form>
+
+@livewire('product-update', ['product' => $product])
 
 
 @endsection

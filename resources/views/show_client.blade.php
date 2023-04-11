@@ -28,7 +28,7 @@
             <div class="text-white flex flex-row gap-3 text-center mt-5">
                 <button id="delete_father" data-modal-target="popup-modal-delete-client" data-modal-toggle="popup-modal-delete-client"
                     class="bg-red-500 rounded-xl w-full p-3">Eliminar</button>
-                <a class="bg-yellow-300 rounded-xl w-full p-3" href="#">Modificar</a>
+                <button data-modal-target="update-modal" data-modal-toggle="update-modal" class="bg-yellow-300 rounded-xl w-full p-3">Modificar</button>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
                             {{ $value->email }}
                         </td>
                         <td>
-                            <button class="bg-yellow-300 p-1 rounded-lg">
+                            <button data-modal-target="representative_client-update" data-modal-toggle="representative_client-update" class="bg-yellow-300 p-1 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -146,6 +146,7 @@
                             </div>
                         </div>
                     </form>
+                    @livewire('agent-update', ['value' => $value])
                     @endforeach
                 </tbody>
             </table>
@@ -260,5 +261,8 @@
         </div>
     </div>
 </form>
+
+@livewire('client-update', ['client' => $client])
+
 
 @endsection

@@ -47,7 +47,7 @@
             </div>
             <div class="flex justify-between gap-2 text-white">
                 <button class="bg-red-500 p-2 rounded-lg w-full">Eliminar</button>
-                <button class="bg-yellow-300 p-2 rounded-lg w-full">Modificar</button>
+                <button data-modal-target="update-modal" data-modal-toggle="update-modal" class="bg-yellow-300 p-2 rounded-lg w-full">Modificar</button>
             </div>
         </div>
     </div>
@@ -226,7 +226,7 @@
                     @csrf
                     @method('PATCH')
                     @foreach ($items as $item)
-                    @if (!$item->project_id != null)
+                    @if (!$item->project_id && $item->model != null)
                     <div class="flex justify-between content-center items-center">
                         <div class="flex gap-3">
                             <div>
@@ -254,5 +254,7 @@
         </div>
     </div>
 </div>
+
+@livewire('project-update', ['project' => $project])
 
 @endsection

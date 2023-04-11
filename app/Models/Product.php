@@ -9,6 +9,14 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'model',
+        'name',
+        'brand',
+        'part_number',
+        'specification'
+    ];
+
     public function items(){
         return $this->hasMany('App\Models\ProductItem');
     }

@@ -36,10 +36,10 @@ class ProductController extends Controller
 
         return redirect()->route('product')->with('msg', 'El producto ha sido creado satisfactoriamente');
     }
-    public function show($model){
-        $product = Product::where('model', '=', $model)->get()->first();
-        $items = ProductItem::where('model', '=', $model)->where('company_reference', '=', session('company_reference'))->get();
-        return view('show_product', compact('product', 'items'));
+    public function show($id){
+        $product = Product::findOrFail($id);
+        //$items = ProductItem::where('model', '=', $model)->where('company_reference', '=', session('company_reference'))->get();
+        return view('show_product', compact('product'));
     }
     public function delete($model){
         $product = Product::where('model', $model)->delete();

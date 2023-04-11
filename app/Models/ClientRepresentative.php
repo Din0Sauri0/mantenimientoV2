@@ -9,6 +9,13 @@ class ClientRepresentative extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'last_name',
+        'number',
+        'email'
+    ];
+
     public function client(){
         return $this->belongsTo('App\Models\Client');
     }

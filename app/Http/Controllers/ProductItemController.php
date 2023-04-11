@@ -17,6 +17,7 @@ class ProductItemController extends Controller
         $item = new ProductItem();
         $item->model = $request->model;
         $item->serial_number = $request->serial_number;
+        $item->product_id = $request->product_id;
         $item->company_reference = session('company_reference');
         $item->save();
         return redirect()->back();

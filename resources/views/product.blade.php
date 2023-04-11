@@ -53,7 +53,7 @@
             </div>
             
             <div class="flex flex-row-reverse">
-                <a href="{{ route('product.show', $product->model) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
+                <a href="{{ route('product.show', $product->id) }}" class="w-20 p-2 hover:bg-gray-200 flex justify-center items-center rounded-xl text-blue-800">Ir ></a>
             </div>
         </div>
         @endforeach

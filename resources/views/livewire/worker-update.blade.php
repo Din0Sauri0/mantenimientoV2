@@ -13,22 +13,22 @@
                         @csrf
                         <div>
                             <label for="id" class="block mb-2 text-sm font-medium text-gray-500">Rut</label>
-                            <input wire:model="rut" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('id')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="id" id="id" value="{{ old('id', $worker_data['id']) }}" >
+                            <input wire:model="rut" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('id')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="id" id="id">
                             @error('id')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>
                         <div>
                             <label for="id" class="block mb-2 text-sm font-medium text-gray-500">Nombre</label>
-                            <input wire:model="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="name" id="name" value="{{ old('name', $worker_data['name']) }}" >
+                            <input wire:model="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="name" id="name">
                             @error('name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>
                         <div>
                             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-500">Apellido</label>
-                            <input wire:model="last_name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('last_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="last_name" id="last_name" value="{{ old('last_name', $worker_data['last_name']) }}" >
+                            <input wire:model="last_name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('last_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="last_name" id="last_name">
                             @error('last_name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-500">Email</label>
-                            <input wire:model="email" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('email')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="email" id="email" value="{{ old('email', $worker_data['email']) }}" >
+                            <input wire:model="email" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('email')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="email" id="email">
                             @error('email')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>
                         <div class=" text-white flex justify-between">
