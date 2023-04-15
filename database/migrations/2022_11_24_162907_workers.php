@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('workers', function(Blueprint $table){
             $table->id();
             $table->string('last_name');
-            $table->boolean('admin')->default(false);
             $table->timestamps();
             $table->unsignedBigInteger('user_reference');
             $table->unsignedBigInteger('company_reference');

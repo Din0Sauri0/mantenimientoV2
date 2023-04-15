@@ -9,16 +9,16 @@
     @yield('scripts')
     <title>@yield('title')</title>
 </head>
-<body>
-    <div class='w-screen lg:h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
+<body class="relative">
+    <div class='w-screen relative lg:h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
         @auth
         <nav class='bg-orange-400 text-white xl:w-1/6 lg:w-1/6 md:w-1/6 sm:w-1/6 xl:h-full lg:h-full md:full sm:h-full flex flex-col'>
-            <div class='w-full flex justify-between p-3'>
+            <div class='w-full flex justify-between p-3 items-center'>
                 <div>
-                    <img class="rounded-full" src="{{ asset('img/logo2.png') }}" alt="">
+                    <img class="rounded-full lg:w-auto w-[50%]" src="{{ asset('img/logo2.png') }}" alt="">
                 </div>
                 <div onclick='openMenu()' class='lg:hidden xl:hidden sm:hidden'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                     </svg>
                 </div>

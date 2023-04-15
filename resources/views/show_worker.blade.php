@@ -23,7 +23,7 @@
                     <h1 class="text-2xl" for="last_name">{{ $worker_data['last_name'] }}</h1>
                 </div>
             </div>
-            <div>
+            <div class="overflow-auto">
                 <label class="text-gray-500 text-sm" for="email">Correo electronico</label>
                 <h1 class="text-2xl" for='email'>{{ $worker_data['email'] }}</h1>
             </div>
@@ -37,9 +37,9 @@
                     @endif
                 </h1>
             </div>
-            <div class="text-white flex justify-between">
-                <button data-modal-target="popup-modal-delete" data-modal-toggle="popup-modal-delete" class="bg-red-400 hover:bg-red-600 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Eliminar</button>
-                <button id="open-modal" data-modal-target="update-modal" data-modal-toggle="update-modal" class="bg-yellow-400 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Modificar</button>
+            <div class="text-white flex justify-between w-full">
+                <button data-modal-target="popup-modal-delete" data-modal-toggle="popup-modal-delete" class="bg-red-400 hover:bg-red-600 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-full">Eliminar</button>
+                <button id="open-modal" data-modal-target="update-modal" data-modal-toggle="update-modal" class="bg-yellow-400 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-full">Modificar</button>
             </div>
         </div>
 

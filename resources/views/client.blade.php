@@ -14,13 +14,13 @@
     </div>
 </div>
 @else
-<div class="p-5 flex flex-col gap-3">
-    <div class="flex justify-between content-center">
+<div class="p-5 overflow-auto">
+    <div class="flex justify-between content-center mb-5">
         <div>
             <a href="{{ route('client.create') }}" class="text-white bg-orange-400 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Agregar</a>
         </div>
         @if (Session::has('msg'))
-        <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div id="toast-success" class="absolute top-1.5 right-1.5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 <span class="sr-only">Check icon</span>
@@ -33,7 +33,7 @@
         </div>
         @endif
     </div>
-    <div class="flex flex-col gap-2 2xl:grid 2xl:grid-cols-4 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2">
+    <div class="w-full grid lg:grid-cols-3 gap-2">
         @foreach ($clients as $client)
         <div class="bg-white rounded-xl shadow-xl p-2">
             <div class="flex flex-col justify-between">

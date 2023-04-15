@@ -50,12 +50,12 @@ class WorkerController extends Controller
         $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->is_admin = $request->boolean('admin');
         $user->password = Hash::make($request->password);
         
         $worker = new Worker();
         $worker->id = $request->id;
         $worker->last_name = $request->last_name;
-        $worker->admin = $request->boolean('admin');
         $worker->user_reference = $user->id;
         $worker->company_reference = session('company_reference');
         

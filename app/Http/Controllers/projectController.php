@@ -42,4 +42,10 @@ class projectController extends Controller
         //dd($products);
         return view('show_project', compact('project', 'items'));
     }
+
+    public function delete($id){
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect()->route('project');
+    }
 }

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="p-5 w-full h-screen overflow-auto">
-    <div class="w-full flex gap-5 justify-around items-center">
+    <div class="w-full flex flex-col lg:flex-row gap-5 justify-around items-center">
         <div>
             <img class="rounded-full border-4 border-white shadow-xl"
                 src="{{ asset('img/malldelcentroconcepcion.png') }}" alt="">
@@ -42,18 +42,17 @@
         </div>
     </div>
     <div class="flex flex-col">
-        <div
-        class="flex justify-between">
+        <div class="flex justify-between mt-3">
             <button data-modal-target="item-register" data-modal-toggle="item-register" class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl text-gray-500">+</button>
             <div class="flex justify-center items-center gap-3">
-                <div class="bg-green-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
-                    Instalados: {{ $product->items->whereNotNull('project_id')->count() }}
+                <div class="bg-green-400 rounded-full lg:w-auto h-7 w-7 p-3 flex justify-center items-center text-white">
+                    <h3 class="hidden lg:block">Instalados:&nbsp;</h3><h4>{{ $product->items->whereNotNull('project_id')->count() }}</h4> 
                 </div>
-                <div class="bg-red-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
-                    No instalados: {{ $product->items->whereNull('project_id')->count() }}
+                <div class="bg-red-400 rounded-full lg:w-auto h-7 w-7 p-3 flex justify-center items-center text-white">
+                    <h3 class="hidden lg:block">No instalados:&nbsp;</h3><h4>{{ $product->items->whereNull('project_id')->count() }}</h4>
                 </div>
-                <div class="bg-yellow-400 rounded-full w-auto h-5 p-3 flex justify-center items-center text-white">
-                    total: {{ $product->items->count() }}
+                <div class="bg-yellow-400 rounded-full lg:w-auto h-7 w-7 p-3 flex justify-center items-center text-white">
+                    <h3 class="hidden lg:block">total:&nbsp;</h3><h4>{{ $product->items->count() }}</h4>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
 @endsection
 @section('content')
 <div class="p-5 w-full h-screen overflow-auto">
-    <div class="w-full flex gap-5 justify-around items-center">
+    <div class="w-full flex flex-col lg:flex-row gap-5 justify-around items-center">
         <div class="h-[50%] flex items-center justify-center m-5">
             <img class="rounded-full border-4 border-white shadow-xl"
                 src="{{ asset('img/malldelcentroconcepcion.png') }}" alt="">
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <button class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl" data-modal-target="representative_client" data-modal-toggle="representative_client">+</button>
+    <button class="w-5 h-5 rounded-full p-5 flex justify-center items-center mb-3 bg-white shadow-xl mt-2" data-modal-target="representative_client" data-modal-toggle="representative_client">+</button>
 
     <div class="w-full flex justify-center">
         @if ($client->agents->isEmpty())
