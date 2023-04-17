@@ -10,6 +10,7 @@ use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\ClientRepresentativeController;
+use App\Http\Controllers\MaintenanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,5 +83,9 @@ Route::controller(projectController::class)->middleware(['auth'])->group(functio
     Route::post('/registrar_proyecto', 'store')->name('project.store')->middleware('admin');
     Route::get('/proyecto/{id}', 'show')->name('project.show');
     Route::delete('/proyecto/{id}', 'delete')->name('project.delete')->middleware('admin');
+});
+
+Route::controller(MaintenanceController::class)->middleware(['auth'])->group(function(){
+    Route::get('/mantencion/{id}', 'show')->name('maintenance.show');
 });
 

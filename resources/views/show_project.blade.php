@@ -19,13 +19,18 @@
     @endif
     
     <div class="w-full flex flex-col-reverse gap-2 lg:flex-row lg:justify-between mb-2">
-        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col w-full lg:w-[50%]">
+        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col w-full lg:w-[50%] max-h-96">
             <div class="flex justify-between">
                 <h1 class="text-xl">Mantenciones</h1>
                 <button data-modal-target="create-maintenance" data-modal-toggle="create-maintenance">Agregar</button>
             </div>
             <div class="overflow-auto">
-
+                @foreach ($project->maintenance as $maintenance)
+                <div class="rounded-xl p-3 flex justify-between">
+                    <a href="{{ route('maintenance.show', $maintenance->id) }}" class="hover:text-blue-500">{{$maintenance->start}}</a>
+                    <p>{{ $maintenance->state }}%</p>
+                </div>
+                @endforeach
             </div>
         </div>
         <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-3 max-w-lg">
