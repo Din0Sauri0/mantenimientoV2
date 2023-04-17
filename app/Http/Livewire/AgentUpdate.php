@@ -21,6 +21,10 @@ class AgentUpdate extends Component
         'email' => 'required'
     ];
 
+    public function middleware(){
+        return ['admin'];
+    }
+
     public function mount($value){
         $this->name = $value->name;
         $this->last_name = $value->last_name;

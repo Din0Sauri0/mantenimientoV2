@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\models\ClientRepresentative;
+use App\Models\ClientRepresentative;
 use App\Models\Client;
 
 use Illuminate\Http\Request;

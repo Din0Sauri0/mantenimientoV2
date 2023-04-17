@@ -27,4 +27,8 @@ class Project extends Model
     public function agent(){
         return $this->belongsTo('App\Models\ClientRepresentative');
     }
+
+    public function maintenance(){
+        return $this->hasMany('App\Models\Maintenance');
+    }
 }

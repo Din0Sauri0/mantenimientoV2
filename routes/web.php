@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 //Controladores
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\LoginUserController;
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\projectController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\ProductController;
@@ -76,7 +76,7 @@ Route::controller(ProductItemController::class)->middleware(['auth'])->group(fun
     Route::patch('/item/delete/{id}', 'patch_delete')->name('product_item.patch_delete')->middleware('admin');
     Route::patch('/item/update/location/{id}', 'patch_location')->name('product_item.patch_location')->middleware('admin');
 });
-Route::controller(ProjectController::class)->middleware(['auth'])->group(function(){
+Route::controller(projectController::class)->middleware(['auth'])->group(function(){
     Route::get('/proyectos', 'index')->name('project');
     Route::get('/registrar_proyecto', 'create')->name('project.create')->middleware('admin');
     Route::post('/registrar_proyecto', 'store')->name('project.store')->middleware('admin');
