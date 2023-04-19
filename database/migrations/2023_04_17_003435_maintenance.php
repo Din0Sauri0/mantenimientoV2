@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->date('start');
-            $table->string('state'); //valor del 0 al 100, para saber el porcentaje de avance de una mantencion
+            $table->integer('state'); //valor del 0 al 100, para saber el porcentaje de avance de una mantencion
             $table->json('items');
 
             $table->foreignId('project_id')

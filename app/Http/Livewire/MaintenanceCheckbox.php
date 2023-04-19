@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\MaintenanceStateItem;
+use App\Models\Maintenance;
 
 class MaintenanceCheckbox extends Component
 {
@@ -20,9 +21,13 @@ class MaintenanceCheckbox extends Component
     {
         return view('livewire.maintenance-checkbox');
     }
+    public function updating(){
+        $this->render();
+    }
 
     public function isClick(){
         $exist = MaintenanceStateItem::where('maintenance_id', $this->maintenance_id)->where('item_id', $this->item_id)->first();
+        $maintenance = Maintenance::findOrFail($this->maintenance_id);
         if($exist==null){
             $maintenanceItem = MaintenanceStateItem::create([
                 'check_box_state' => $this->is_checked,
@@ -30,6 +35,7 @@ class MaintenanceCheckbox extends Component
                 'item_id' => $this->item_id
             ]);
             $maintenanceItem->save();
+            
         }else{
             $exist->update([
                 'check_box_state' => $this->is_checked,
@@ -37,5 +43,16 @@ class MaintenanceCheckbox extends Component
                 'item_id' => $this->item_id
             ]);
         }
+        // $this->porcentaje($maintenance, $this->is_checked);
     }
+
+
+    // public function porcentaje($maintenance, $checked){
+    //     if($checked){
+    //         $total = $maintenance->project->items->count();
+    //         $porcentaje = 
+    //     }else{
+    //         dd(false);
+    //     }
+    // }
 }
