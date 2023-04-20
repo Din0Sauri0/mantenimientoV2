@@ -21,9 +21,6 @@ class MaintenanceCheckbox extends Component
     {
         return view('livewire.maintenance-checkbox');
     }
-    public function updating(){
-        $this->render();
-    }
 
     public function isClick(){
         $exist = MaintenanceStateItem::where('maintenance_id', $this->maintenance_id)->where('item_id', $this->item_id)->first();
@@ -35,6 +32,7 @@ class MaintenanceCheckbox extends Component
                 'item_id' => $this->item_id
             ]);
             $maintenanceItem->save();
+            return $this->render();
             
         }else{
             $exist->update([
@@ -42,6 +40,8 @@ class MaintenanceCheckbox extends Component
                 'maintenance_id' => $this->maintenance_id,
                 'item_id' => $this->item_id
             ]);
+            $exist->save();
+            return $this->render();
         }
         // $this->porcentaje($maintenance, $this->is_checked);
     }
