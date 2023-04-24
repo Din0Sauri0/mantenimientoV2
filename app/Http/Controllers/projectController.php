@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Project;
-use App\Models\ProductItem;
+use App\Models\Item;
 
 class projectController extends Controller
 {
@@ -38,7 +38,7 @@ class projectController extends Controller
 
     public function show($id){
         $project = Project::findOrFail($id);
-        $items = ProductItem::all()->where('company_reference', '=', session('company_reference'));
+        $items = Item::all()->where('company_reference', '=', session('company_reference'));
         //dd($products);
         return view('show_project', compact('project', 'items'));
     }

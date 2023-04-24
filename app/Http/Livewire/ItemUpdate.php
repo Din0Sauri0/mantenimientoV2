@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\ProductItem;
+use App\Models\Item;
 
 class ItemUpdate extends Component
 {
@@ -25,7 +25,7 @@ class ItemUpdate extends Component
 
     public function update(){
         $this->validate();
-        $product = ProductItem::findOrFail($this->value->id);
+        $product = Item::findOrFail($this->value->id);
         if($product){
             $product->update([
                 'serial_number' => strtoupper($this->serial_number)

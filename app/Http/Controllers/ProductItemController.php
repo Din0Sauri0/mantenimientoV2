@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductItem;
+use App\Models\Item;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class ProductItemController extends Controller
             'serial_number' => 'required',
             'state' => 'nullable',
         ]);
-        $item = new ProductItem();
+        $item = new Item();
         $item->model = $request->model;
         $item->serial_number = $request->serial_number;
         $item->product_id = $request->product_id;
@@ -24,14 +24,14 @@ class ProductItemController extends Controller
     }
 
     public function delete($id){
-        $item = ProductItem::findOrFail($id);
+        $item = Item::findOrFail($id);
         $item->delete();
         return redirect()->back();
     }
 
     public function patch(Request $request, $id){
         foreach($request->items as $item_id){
-            $item = ProductItem::findOrFail($item_id);
+            $item = Item::findOrFail($item_id);
             $item->project_id = $id;
             $item->save();
 
@@ -39,13 +39,13 @@ class ProductItemController extends Controller
         return redirect()->back();
     }
     public function patch_delete($id){
-        $item = ProductItem::findOrFail($id);
+        $item = Item::findOrFail($id);
         $item->project_id = null;
         $item->save();
         return redirect()->back();
     }
     public function patch_location(Request $request, $id){
-        $item = ProductItem::findOrFail($id);
+        $item = Item::findOrFail($id);
         $item->location = $request->location;
         $item->save();
         return redirect()->back();

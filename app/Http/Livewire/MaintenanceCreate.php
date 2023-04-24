@@ -21,7 +21,6 @@ class MaintenanceCreate extends Component
             'start' => $this->date,
             'state' => '0',
             'project_id' => $this->project->id,
-            'items' => $this->project->items
         ]);
         $maintenance->save();
         return redirect()->route('project.show', $this->project->id)->with('msg', 'Mantencion agendada');

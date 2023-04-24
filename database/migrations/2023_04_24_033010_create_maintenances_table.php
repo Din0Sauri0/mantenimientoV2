@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maintenance_state_items', function (Blueprint $table){
+        Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
-            $table->boolean('check_box_state');
-            $table->unsignedBigInteger('maintenance_id');
-            $table->unsignedBigInteger('item_id');
             $table->timestamps();
+            $table->date('start');
+            $table->integer('state'); //valor del 0 al 100, para saber el porcentaje de avance de una mantencion
+
+            $table->foreignId('project_id')
+                ->nullable()
+                ->constrained('projects')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
 
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maintenance_state_items');
+        Schema::dropIfExists('maintenances');
     }
 };

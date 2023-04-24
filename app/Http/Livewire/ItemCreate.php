@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use APP\Models\ProductItem;
+use APP\Models\Item;
 
 class ItemCreate extends Component
 {
@@ -28,7 +28,7 @@ class ItemCreate extends Component
 
     public function create(){
         $this->validate();
-        ProductItem::create([
+        Item::create([
             'serial_number' => strtoupper($this->serial_number),
             'model' => $this->model,
             'company_reference' => session('company_reference'),

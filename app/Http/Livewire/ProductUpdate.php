@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Product;
-use App\Models\ProductItem;
+use App\Models\Item;
 
 class ProductUpdate extends Component
 {
@@ -42,7 +42,7 @@ class ProductUpdate extends Component
     public function update(){
         $this->validate();
         $product = Product::findOrFail($this->product->id);
-        $item = ProductItem::where('product_id', $this->product->id);
+        $item = Item::where('product_id', $this->product->id);
         if($product){
             $product->update([
                 'brand' => $this->brand,

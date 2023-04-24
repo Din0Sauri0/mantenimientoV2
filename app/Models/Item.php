@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductItem extends Model
+class Item extends Model
 {
     use HasFactory;
 
@@ -25,6 +25,6 @@ class ProductItem extends Model
     }
 
     public function maintenances(){
-        return $this->belongsToMany('App\Models\Maintenance', 'items_maintenances_table');
+        return $this->belongsToMany(Maintenance::class, 'items_maintenances');
     }
 }

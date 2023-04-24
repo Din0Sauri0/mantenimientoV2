@@ -11,12 +11,11 @@ class Maintenance extends Model
 
     protected $fillable = [
         'start',
-        'state',
-        'project_id',
-        'items'
+        'state'
     ];
 
-    public function project(){
-        return $this->belongsTo('App\Models\Project');
+
+    public function items(){
+        return $this->belongsToMany(Item::class, 'items_maintenances');
     }
 }

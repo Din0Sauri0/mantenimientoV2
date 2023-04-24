@@ -18,6 +18,6 @@ class Product extends Model
     ];
 
     public function items(){
-        return $this->hasMany('App\Models\ProductItem');
+        return $this->hasMany('App\Models\Item');
     }
 }
