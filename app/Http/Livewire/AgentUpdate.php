@@ -21,9 +21,6 @@ class AgentUpdate extends Component
         'email' => 'required'
     ];
 
-    public function middleware(){
-        return ['admin'];
-    }
 
     public function mount($value){
         $this->name = $value->name;
@@ -38,6 +35,9 @@ class AgentUpdate extends Component
     }
 
     public function update(){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('client.show', $this->value->client_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         $agent = ClientRepresentative::findOrFail($this->value->id);
         if($agent){

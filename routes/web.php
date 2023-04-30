@@ -11,6 +11,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\ClientRepresentativeController;
 use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\ImageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -87,5 +90,13 @@ Route::controller(projectController::class)->middleware(['auth'])->group(functio
 
 Route::controller(MaintenanceController::class)->middleware(['auth'])->group(function(){
     Route::get('/mantencion/{id}', 'show')->name('maintenance.show');
+});
+
+Route::controller(PDFController::class)->middleware(['auth'])->group(function(){
+    Route::get('reporte/pdf/{id}', 'index')->name('reporte.pdf');
+});
+
+Route::controller(ImageController::class)->middleware(['auth'])->group(function(){
+    Route::post('/image/clients', 'store_client')->name('image.client');
 });
 

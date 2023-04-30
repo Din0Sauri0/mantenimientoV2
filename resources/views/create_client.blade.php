@@ -2,12 +2,14 @@
 @section('title')
     Cliente    
 @endsection
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
 @section('content')
+
 <div class="p-5 w-full lg:grid lg:grid-cols-2 gap-5 lg:justify-center lg:items-center">
-    <form action="#" class="lg:h-[50%] h-80 w-full flex justify-center bg-white border-dashed border-2 border-gray-500 mb-2">
-        <div id="dropzone">
-            <h1>dropzone here</h1>
-        </div>
+    <form action="{{ route('image.client') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone order-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+        @csrf
     </form>
     <form action="{{ route('client.store') }}" method="POST" class="bg-white p-5 rounded-xl shadow-xl">
         @csrf

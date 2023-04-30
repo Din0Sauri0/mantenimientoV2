@@ -36,11 +36,17 @@ class ProjectUpdate extends Component
         $this->agents = collect();
     }
     public function updatedClient($value){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->agents = ClientRepresentative::where('client_id', $value)->get();
         $this->client_repre = $this->agents->first()->id ?? null;
     }
 
     public function update(){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         $project = Project::find($this->project->id);
         $project->update([

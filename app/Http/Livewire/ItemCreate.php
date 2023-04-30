@@ -27,6 +27,9 @@ class ItemCreate extends Component
     }
 
     public function create(){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('product.show', $this->product->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         Item::create([
             'serial_number' => strtoupper($this->serial_number),

@@ -24,6 +24,9 @@ class ItemUpdate extends Component
     }
 
     public function update(){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         $product = Item::findOrFail($this->value->id);
         if($product){

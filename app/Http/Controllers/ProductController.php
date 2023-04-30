@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 
 class ProductController extends Controller
-{
+{   
     public function index(){
         $products = Product::where('company_reference', '=', session('company_reference'))->get();
         return view('product', compact('products'));
@@ -20,7 +20,7 @@ class ProductController extends Controller
             'product_name' => 'required',
             'model' => 'required',
             'brand' => 'required',
-            'part_number' => 'nullable',
+            'part_number' => 'required',
             'characteristics' => 'required',
         ]);
 

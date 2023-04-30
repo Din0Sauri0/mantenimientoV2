@@ -8,6 +8,8 @@ use App\Models\Item;
 
 class ProductUpdate extends Component
 {
+
+
     public $product;
 
     public $brand;
@@ -15,6 +17,8 @@ class ProductUpdate extends Component
     public $model;
     public $part_number;
     public $characteristics;
+
+    
 
     protected $rules = [
         'brand' => 'required',
@@ -25,6 +29,7 @@ class ProductUpdate extends Component
     ];
 
     public function mount($product){
+
         $this->brand = $product->brand;
         $this->product_name = $product->name;
         $this->model = $product->model;
@@ -40,6 +45,9 @@ class ProductUpdate extends Component
     }
 
     public function update(){
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         $product = Product::findOrFail($this->product->id);
         $item = Item::where('product_id', $this->product->id);

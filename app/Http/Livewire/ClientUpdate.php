@@ -31,6 +31,10 @@ class ClientUpdate extends Component
     }
 
     public function update(){
+        
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('client.show', $this->client->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $this->validate();
         $client = Client::find($this->client->id);
         $client->update([

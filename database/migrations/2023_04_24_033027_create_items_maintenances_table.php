@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('items_maintenances', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->boolean('state')->default(false);
             $table->foreignId('item_id')
                 ->nullable()
                 ->constrained('items')
