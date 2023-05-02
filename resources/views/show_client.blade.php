@@ -23,7 +23,8 @@
     <div class="w-full flex flex-col lg:flex-row gap-5 justify-around items-center">
         <div class="h-[50%] flex items-center justify-center m-5">
             <img class="rounded-full border-4 border-white shadow-xl"
-                src="{{ asset('img/malldelcentroconcepcion.png') }}" alt="">
+                src="{{ asset('uploads').'/'.$client->img }}" alt="image_client" >
+                
         </div>
         <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-5">
             <div>

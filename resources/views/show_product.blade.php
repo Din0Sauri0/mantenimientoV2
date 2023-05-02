@@ -21,9 +21,9 @@
     <div class="w-full flex flex-col lg:flex-row gap-5 justify-around items-center">
         <div>
             <img class="rounded-full border-4 border-white shadow-xl"
-                src="{{ asset('img/malldelcentroconcepcion.png') }}" alt="">
+                src="{{ asset('product').'/'.$product->img }}" alt="imagen_producto" >
         </div>
-        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-5">
+        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-5 max-w-lg max-h-96">
             <div>
                 <label class="text-gray-500">Marca.</label>
                 <h1 class="text-2xl">{{ $product->brand }}</h1>
@@ -45,7 +45,7 @@
                     <h1 class="text-2xl">{{ $product->part_number }}</h1>
                 </div>
             </div>
-            <div>
+            <div class="overflow-auto">
                 <label class="text-gray-500" for="description">Descripción.</label>
                 <h1 class="text-2xl">{!! nl2br($product->specification) !!}</h1>
             </div>

@@ -17,9 +17,6 @@ class MaintenanceCreate extends Component
     ];
 
     public function create(){
-        if(auth()->user()->is_admin == 0){
-            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
-        }
         $this->validate();
         $maintenance = Maintenance::create([
             'start' => $this->date,

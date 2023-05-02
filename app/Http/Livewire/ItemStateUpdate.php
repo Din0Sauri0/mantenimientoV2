@@ -23,9 +23,9 @@ class ItemStateUpdate extends Component
     }
 
     public function update(){
-        // if(auth()->user()->is_admin == 0){
-        //     return redirect()->route('maintenance.show', $item_maintenance->maintenance_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
-        // }
+        if(auth()->user()->is_admin == 0){
+            return redirect()->route('maintenance.show', $this->maintenance_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        }
         $item_maintenance = ItemMaintenance::find($this->maintenance_id);
         $item = Item::find($item_maintenance->item_id);
         if($item->serial_number == $this->state){

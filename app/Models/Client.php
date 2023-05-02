@@ -13,6 +13,7 @@ class Client extends Model
         'company_name',
         'address',
         'giro',
+        'img'
     ];
 
     public function agents(){

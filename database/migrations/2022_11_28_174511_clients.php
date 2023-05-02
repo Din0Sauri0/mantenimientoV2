@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('address');
             $table->string('giro');
+            $table->string('img');
             $table->timestamps();
             //foreign atribute
             $table->unsignedBigInteger('company_reference');

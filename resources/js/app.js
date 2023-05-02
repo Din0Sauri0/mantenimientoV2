@@ -9,5 +9,26 @@ const dropzone = new Dropzone('#dropzone', {
     dicRemoveFile: 'Borrar archivo',
     maxFiles: 1,
     uploadMultiple: false,
+
+    init: function(){
+        if(document.querySelector('[name="img"]').value.trim()){
+            const imageClient = {}
+            imageClient.size = 1234;
+            imageClient.name = document.querySelector('[name="img"]').value;
+
+            this.options.addedfile.call(this, imageClient);
+            this.options.thumbnail.call(this, imageClient, '/uploads/${imageClient.name}')
+
+            imageClient.previewElement.classList.add('dz-successs', 'dz-complete');
+        }
+    }
     
 });
+
+
+dropzone.on('success', (file, response)=>{
+    document.querySelector('[name="img"]').value = response.image;
+});
+dropzone.on('removedfile', ()=>{
+    document.querySelector('[name="img"]').value = '';
+})

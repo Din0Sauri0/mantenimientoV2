@@ -2,13 +2,15 @@
 @section('title')
     Equipamiento
 @endsection
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
 @section('content')
 <div class="p-5 flex flex-col lg:flex-row gap-5 w-full justify-center items-center">
-    <form action="#" class="lg:h-[50%] h-80 w-[50%] flex justify-center bg-white border-dashed border-2 border-gray-500 mb-2">
-        <div id="dropzone">
-            <h1>dropzone here</h1>
-        </div>
+    <form action="{{ route('image.product') }}" id="dropzone" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone order-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center lg:h-[50%] lg:w-[50%]">
+        @csrf
     </form>
+
     <form action="#" method="POST" class="bg-white p-5 rounded-xl shadow-xl">
         @csrf
         <div class="mb-6 flex flex-col">
@@ -37,6 +39,10 @@
             <label for="characteristics" class="block mb-2 text-sm font-medium text-gray-900">Características</label>
             <textarea id="characteristics" name="characteristics" rows="8" placeholder="Escribe las características de equipo aqui..." class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('characteristics')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'></textarea>
             @error('characteristics')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
+        </div>
+        <div class="mb-2">
+            <input name="img" type="hidden" value="{{ old('img') }}">
+            @error('img') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
         </div>
         <div class="mb-6 text-white flex justify-between gap-5">
             <button class="bg-orange-500 rounded-lg p-2.5 w-full" type="submit">Registrar</button>

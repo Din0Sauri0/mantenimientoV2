@@ -21,6 +21,7 @@ class ProductController extends Controller
             'model' => 'required',
             'brand' => 'required',
             'part_number' => 'required',
+            'img' => 'required',
             'characteristics' => 'required',
         ]);
 
@@ -29,6 +30,7 @@ class ProductController extends Controller
         $product->brand = $request->brand;
         $product->name = $request->product_name;
         $product->part_number = $request->part_number;
+        $product->img = $request->img;
         $product->specification = $request->characteristics;
         $product->company_reference = session('company_reference');
         $product->save();

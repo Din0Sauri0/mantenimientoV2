@@ -34,8 +34,8 @@ Route::controller(RegisterUserController::class)->middleware(['guest'])->group(f
     Route::post('/registrar','store')->name('register.post');
 });
 Route::controller(LoginUserController::class)->group(function (){
-    Route::get('/login','index')->name('login');
-    Route::post('/login','store')->name('login.post');
+    Route::get('/login','index')->name('login')->middleware('guest');
+    Route::post('/login','store')->name('login.post')->middleware('guest');
     Route::get('/logout','destroy')->name('logout');
 });
 // Route::controller(HomeController::class)->middleware(['auth'])->group(function (){
@@ -97,6 +97,7 @@ Route::controller(PDFController::class)->middleware(['auth'])->group(function(){
 });
 
 Route::controller(ImageController::class)->middleware(['auth'])->group(function(){
-    Route::post('/image/clients', 'store_client')->name('image.client');
+    Route::post('/image/clients', 'store_client')->name('image.client')->middleware('admin');
+    Route::post('/image/product', 'store_product')->name('image.product')->middleware('admin');
 });
 

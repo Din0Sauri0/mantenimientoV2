@@ -14,6 +14,7 @@ class Product extends Model
         'name',
         'brand',
         'part_number',
+        'img',
         'specification'
     ];
 

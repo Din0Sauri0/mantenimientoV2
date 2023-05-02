@@ -40,33 +40,4 @@ class SearchInput extends Component
             ->get(); 
         }
     }
-
-    // public function search(){
-    //     if($this->search_input == "" || $this->search_input == null){
-    //         $this->result = [];
-    //         $this->result = $this->maintenance->project->items;
-    //         $this->emit('mount', $this->result);
-    //     }else{
-    //         $this->result = [];
-    //         $this->result = Item::where('serial_number', 'like', '%'.$this->search_input.'%')
-    //         ->whereHas('project', function($query) {
-    //             $query->whereHas('items', function($q) {
-    //                 $q->where('serial_number', 'like', '%'.$this->search_input.'%')->where('project_id', $this->maintenance->project->id);
-    //             });
-    //         })
-    //         ->get(); 
-    //         if(count($this->result) == 1){
-    //             $this->result = Item::where('serial_number', 'like', '%'.$this->search_input.'%')
-    //             ->whereHas('project', function($query) {
-    //                 $query->whereHas('items', function($q) {
-    //                     $q->where('serial_number', 'like', '%'.$this->search_input.'%')->where('project_id', $this->maintenance->project->id);
-    //                 });
-    //             })
-    //             ->first(); 
-    //             $this->emit('mount', $this->result);
-    //         }else{
-    //             $this->emit('mount', $this->result);
-    //         }
-    //     }
-    // }
 }

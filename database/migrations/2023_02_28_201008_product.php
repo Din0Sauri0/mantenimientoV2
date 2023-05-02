@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('brand');
             $table->string('part_number');
+            $table->string('img');
             $table->string('specification');
             $table->timestamps();
 

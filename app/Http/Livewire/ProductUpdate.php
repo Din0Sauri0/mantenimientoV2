@@ -46,7 +46,7 @@ class ProductUpdate extends Component
 
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('product')->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('product.show', $this->product->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
         }
         $this->validate();
         $product = Product::findOrFail($this->product->id);
