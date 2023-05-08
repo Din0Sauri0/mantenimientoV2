@@ -14,30 +14,24 @@ class SearchInput extends Component
     public $result;
     public $itemMaintenance = [];
     public $maintenance_state;
-    public $maintenance_id;
 
 
     public function render()
     {
         return view('livewire.search-input');
     }
-    public function mount(){
-        $this->itemMaintenance = ItemMaintenance::where('maintenance_id', $this->maintenance->id)->get();
-        $this->result = $this->maintenance->items;
+    // public function mount(){
+    //     $this->itemMaintenance = ItemMaintenance::where('maintenance_id', $this->maintenance->id)->get();
+    //     $this->result = $this->maintenance->items;
         
-    }
+    // }
 
     public function search(){
         if($this->search_input == "" || $this->search_input == null){
-            $this->result = $this->maintenance->items;
+            return redirect()->route('maintenance.show', $this->maintenance->id);
         }else{
-            $this->result = Item::where('serial_number', 'like', '%'.$this->search_input.'%')
-            ->whereHas('project', function($query) {
-                $query->whereHas('items', function($q) {
-                    $q->where('serial_number', 'like', '%'.$this->search_input.'%')->where('project_id', $this->maintenance->project->id);
-                });
-            })
-            ->get(); 
+            return redirect()->route('result',['search'=> $this->search_input, 'project_id' => $this->maintenance->project_id, 'maintenance_id' => $this->maintenance->id]);
+            
         }
     }
 }

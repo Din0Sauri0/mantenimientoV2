@@ -37,7 +37,7 @@
         <div class="bg-white p-2 rounded-xl drop-shadow-xl flex flex-col justify-between">
             <div class="grid grid-cols-3 justify-center items-center mb-2">
                 <div>
-                    <img class="h-20 w-20 rounded-full" src="{{ asset('img/malldelcentroconcepcion.png') }}" alt="">
+                    <img class="h-20 w-20 rounded-full" src="{{ asset('uploads').'/'.$project->client->img }}" alt="imagen_producto">
                 </div>
                 <div class="pl-2 col-span-2">
                     <h1>{{ $project->name }}</h1>

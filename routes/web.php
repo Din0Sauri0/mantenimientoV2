@@ -13,6 +13,7 @@ use App\Http\Controllers\ClientRepresentativeController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\SearchResultController;
 
 
 /*
@@ -99,5 +100,9 @@ Route::controller(PDFController::class)->middleware(['auth'])->group(function(){
 Route::controller(ImageController::class)->middleware(['auth'])->group(function(){
     Route::post('/image/clients', 'store_client')->name('image.client')->middleware('admin');
     Route::post('/image/product', 'store_product')->name('image.product')->middleware('admin');
+});
+
+Route::controller(SearchResultController::class)->middleware(['auth'])->group(function(){
+    Route::get('/busqueda/{search}/project/{project_id}/maintenance/{maintenance_id}', 'index')->name('result');
 });
 

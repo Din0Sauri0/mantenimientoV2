@@ -11,7 +11,7 @@
         </header>
         <form method="POST" action="{{ route('login') }}" class='flex flex-col p-2 gap-3 mt-3'>
             @csrf
-            <label for="email" class='font-bold @error('email') text-red-700 @enderror'>Email</label>
+            <label for="email" class='font-bold @error('email') text-red-700 @enderror'>Correo</label>
             <div class='relative flex items-center'>
                 <svg class='absolute h-4 w-4 ml-3 pointer-events-none' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -30,13 +30,12 @@
             @error('password')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
             <div class='flex items-center w-full'>
                 <input class="" type="checkbox" name="remember" id="remember">
-                <label for="remember">Recuerda me</label>
+                <label for="remember">Recuerdame</label>
             </div>
             
             <button class='bg-orange-400 hover:bg-orange-500 hover:h-11 rounded-md h-9 text-gray-100 font-bold' type="submit">Iniciar</button>
         </form>
         <footer class='flex items-center justify-center flex-col font-bold'>
-            <span>O</span>
             <a href="{{ route('register') }}" class='hover:text-sky-700 hover:underline'>Pincha aqui para registrarte</a>
         </footer>
     </div>

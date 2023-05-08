@@ -11,11 +11,11 @@
         @csrf
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="name">Nombre del proyecto</label>
-            <input type="text" name="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('namne')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
+            <input value="{{ old('name') }}" type="text" name="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('namne')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
         </div>
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="description">Descripcion del proyeto</label>
-            <textarea name="description" id="description" cols="40" rows="5" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('description')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'></textarea>
+            <textarea name="description" id="description" cols="40" rows="5" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('description')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>{{ old('description') }}</textarea>
         </div>
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="client">Cliente</label>
@@ -31,9 +31,9 @@
             <select name="client_repre" id="client_repre" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('client_repre')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
             </select>
         </div>
-        <div>
-            <button type="submit">Guardar</button>
-            <a href="#">Cancelar</a>
+        <div class="mb-6 text-white flex justify-between gap-5">
+            <button class="bg-orange-500 rounded-lg p-2.5 w-full" type="submit">Guardar</button>
+            <a class="bg-yellow-400 rounded-lg p-3 w-full text-center" href="{{ route('project') }}">Cancelar</a>
         </div>
     </form>
 </div>
