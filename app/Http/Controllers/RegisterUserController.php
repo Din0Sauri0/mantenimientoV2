@@ -15,6 +15,13 @@ class RegisterUserController extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required' => 'Este campo es requerido.',
+            'email' => 'El campo correo debe ser una dirección de correo electronico valida',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'unique' => 'Este atributo ya ha sido registrado'
+        ];
         $request->validate([
             'id' => 'required| min:8| max:9| unique:users',
             'name' => 'required| min:3| max:50',
@@ -22,7 +29,7 @@ class RegisterUserController extends Controller
             'email' => 'required|email|min:10| max:120| unique:users',
             'password' => 'required|min:6|max:15',
 
-        ]);
+        ], $messages);
 
         $user = new User();
         $company = new Company();

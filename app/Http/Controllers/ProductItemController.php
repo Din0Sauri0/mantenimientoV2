@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 class ProductItemController extends Controller
 {
     public function store( Request $request){
+        $messages = [
+            'required' => 'Este campo es requerido.',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'unique' => 'Este numero de serie ya ha sido registrado'
+        ];
         $request->validate([
             'model' => 'required',
-            'serial_number' => 'required',
+            'serial_number' => 'required|unique:items|min:3|max:25',
             'state' => 'nullable',
-        ]);
+        ], $messages);
         $item = new Item();
         $item->model = $request->model;
         $item->serial_number = $request->serial_number;

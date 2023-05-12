@@ -16,14 +16,20 @@ class ProductController extends Controller
         return view('create_product');
     }
     public function store(Request $request){
+        $messages = [
+            'required' => 'Este campo es requerido.',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'unique' => 'Este modelo ya ha sido registrado'
+        ];
         $request->validate([
-            'product_name' => 'required',
-            'model' => 'required',
-            'brand' => 'required',
-            'part_number' => 'required',
+            'product_name' => 'required|min:3|max:25',
+            'model' => 'required|unique:products|min:3|max:25',
+            'brand' => 'required|min:3|max:25',
+            'part_number' => 'required|min:3|max:50',
             'img' => 'required',
             'characteristics' => 'required',
-        ]);
+        ], $messages);
 
         $product = new Product();
         $product->model = strtoupper($request->model);

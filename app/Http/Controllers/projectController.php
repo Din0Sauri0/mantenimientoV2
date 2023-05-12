@@ -19,12 +19,17 @@ class projectController extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required' => 'Este campo es requerido.',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+        ];
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:3|max:25',
             'description' => 'required',
             'client' => 'required',
             'client_repre' => 'required',
-        ]);
+        ], $messages);
 
         $project = new Project();
         $project->name = $request->name;

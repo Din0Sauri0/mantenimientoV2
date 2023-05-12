@@ -36,6 +36,13 @@ class WorkerController extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required' => 'Este campo es requerido.',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'unique' => 'Este atributo ya se encuentra registrado',
+            'email' => 'Este campo debe ser un correo electronico valido'
+        ];
         $request->validate([
             'id' => 'required| min:8| max:9| unique:users',
             'name' => 'required| min:3| max:20',
@@ -44,7 +51,7 @@ class WorkerController extends Controller
             'password' => 'required|min:6|max:15',
             'password_confirmation' => 'required',
             'admin' => 'nullable'
-        ]);
+        ], $messages);
         //dd($request);
         $user = new User();
         $user->id = $request->id;

@@ -14,11 +14,20 @@ class AgentUpdate extends Component
     public $phone;
     public $email;
 
+    public function messages(){
+        return [
+            'required' => 'Este campo es requerido',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'email.unique' => 'Este correo electronico ya se encuentra registrado'
+        ];
+    }
+
     protected $rules = [
-        'name' => 'required',
-        'last_name' => 'required',
-        'phone' => 'required',
-        'email' => 'required'
+        'name' => 'required|min:3|max:15',
+        'last_name' => 'required|min:3|max:25',
+        'phone' => 'required|min:9|max:9',
+        'email' => 'required|unique:client_representatives|min:3|max:25'
     ];
 
 

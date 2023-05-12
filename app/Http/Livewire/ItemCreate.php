@@ -12,9 +12,16 @@ class ItemCreate extends Component
     public $model;
     public $serial_number;
 
+    public function messages(){
+        return [
+            'required' => 'Este campo es requerido',
+            'serial_number.unique' => 'El campo numero de serie ya se encuntra registrado',
+        ];
+    }
+
     protected $rules = [
         'model' => 'required',
-        'serial_number' => 'required'
+        'serial_number' => 'required|unique:items|min:3|max:50'
     ];
 
     public function mount($product){

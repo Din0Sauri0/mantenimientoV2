@@ -13,10 +13,20 @@ class ClientUpdate extends Component
     public $address;
     public $giro;
 
+    public function messages(){
+        return [
+            'required' => 'Este campo es requerido.',
+            'min' => 'Este campo debe contar con al menos :min caracteres',
+            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'unique' => 'Ya existe un cliente con este nombre'
+        ];
+    }
+
     protected $rules = [
-        'company_name' => 'required',
-        'address' => 'required',
-        'giro' => 'required',
+        'company_name' => 'required|min:5|max:100|unique:clients',
+        'address' => 'required|min:4|max:100',
+        'giro' => 'required|min:4|max:100',
+        'img' => 'required'
     ];
 
     public function mount($client){

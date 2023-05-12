@@ -14,10 +14,6 @@ class ItemStateUpdate extends Component
     public $state;
     public $maintenance;
 
-    protected $middleware = [
-        \App\Http\Middleware\AdminMiddleware::class,
-    ];
-
     public function render()
     {
         return view('livewire.item-state-update');
