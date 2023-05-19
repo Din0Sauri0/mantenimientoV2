@@ -36,7 +36,7 @@
                                 class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                     </div>
                     <div class="mt-5">
-                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Telefono</label>
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Teléfono</label>
                         <input wire:model="phone" type="tel" name="phone" id="phone"
                             class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('
                             phone')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500
@@ -45,7 +45,7 @@
                                 class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                     </div>
                     <div class="mt-5">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo electrónico</label>
                         <input wire:model="email" type="email" id="email" name="email"
                             class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('email')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
                         @error('email')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror

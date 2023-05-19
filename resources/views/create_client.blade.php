@@ -18,13 +18,13 @@
     <form action="{{ route('client.store') }}" method="POST" class="bg-white p-5 rounded-xl shadow-xl">
         @csrf
         <div id="institution_information">
-            <h1 class="text-xl">Datos de la institucion</h1>
+            <h1 class="text-xl">Datos de la institución</h1>
             <div class="mb-2">
-                <input value="{{ old('company_name') }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="company_name" id="company_name" placeholder="Nombre o razon social">
+                <input value="{{ old('company_name') }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="company_name" id="company_name" placeholder="Nombre o razón social">
                 @error('company_name') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">
-                <input value="{{ old('address') }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="address" id="address" placeholder="Direccion">
+                <input value="{{ old('address') }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="address" id="address" placeholder="Dirección">
                 @error('address') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">

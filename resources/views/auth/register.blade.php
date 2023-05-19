@@ -41,7 +41,7 @@
                 @error('address')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
             </div>
             <div class="flex flex-col">
-                <label for="direccion" class='font-bold @error('email') text-red-700 @enderror'>Correo electronico</label>
+                <label for="direccion" class='font-bold @error('email') text-red-700 @enderror'>Correo electrónico</label>
                 <div class='relative flex items-center'>
                     <svg class='absolute h-4 w-4 ml-3 pointer-events-none' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -73,8 +73,7 @@
             <button class='bg-orange-400 hover:bg-orange-500 hover:h-11 rounded-md h-9 text-gray-100 font-bold' type="submit">Registrar</button>
         </form>
         <footer class='flex items-center justify-center flex-col font-bold'>
-            <span>O</span>
-            <a href="{{ route('login') }}" class='hover:text-sky-700 hover:underline'>Pincha aqui para iniciar sesion</a>
+            <a href="{{ route('login') }}" class='hover:text-sky-700 hover:underline'>Pincha aquí para iniciar sesion</a>
         </footer>
     </div>
 

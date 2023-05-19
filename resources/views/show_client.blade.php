@@ -72,10 +72,10 @@
                             Nombre
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Telefono
+                            Teléfono
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Correo electronico
+                            Correo electrónico
                         </th>
                         <th></th>
                         <th></th>
@@ -209,7 +209,7 @@
                                 class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                     </div>
                     <div>
-                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Telefono</label>
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Teléfono</label>
                         <input type="tel" name="phone" id="phone"
                             class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('
                             phone')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500
@@ -218,7 +218,7 @@
                                 class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                     </div>
                     <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo electrónico</label>
                         <input type="email" id="email" name="email"
                             class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('
                             email')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500
@@ -261,7 +261,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Estas seguro de elimar a {{
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Esta seguro de eliminar a {{
                         $client->company_name }}?</h3>
                     <button data-modal-hide="popup-modal-delete-client" type="submit"
                         class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">

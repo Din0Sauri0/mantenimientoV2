@@ -27,7 +27,7 @@
                         </div>
                         <div id="representative_information">
                         <div class="mb-6 text-white flex justify-between gap-5">
-                            <button wire:click="update" class="bg-orange-500 hover:bg-orange-600 p-2 rounded-xl w-full text-white" type="submit">Registrar</button>
+                            <button wire:click="update" class="bg-orange-500 hover:bg-orange-600 p-2 rounded-xl w-full text-white" type="submit">Guardar</button>
                             <button data-modal-hide="update-modal" class="bg-yellow-400 rounded-lg p-3 w-full text-center">Cancelar</button>
                         </div>
                 
