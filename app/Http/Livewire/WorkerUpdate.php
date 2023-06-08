@@ -37,7 +37,7 @@ class WorkerUpdate extends Component
     
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('worker.show', $this->worker_data['id'])->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('worker.show', $this->worker_data['id'])->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
         $this->validate();
         $user = User::find($this->worker_data['id']);

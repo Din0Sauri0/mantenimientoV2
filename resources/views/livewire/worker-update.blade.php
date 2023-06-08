@@ -27,7 +27,7 @@
                             @error('last_name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-500">Email</label>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-500">Correo electrónico</label>
                             <input wire:model="email" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('email')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="email" id="email">
                             @error('email')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                         </div>

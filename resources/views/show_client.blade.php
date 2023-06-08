@@ -56,7 +56,7 @@
             <h5 class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 No se han encontrado representantes, prueba agregando uno nuevo
             </h5>
-            <button data-modal-target="representative_client" data-modal-toggle="representative_client" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aqui para agregar un nuevo!</button>
+            <button data-modal-target="representative_client" data-modal-toggle="representative_client" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aquí para agregar un nuevo!</button>
         </div>
 
         @else

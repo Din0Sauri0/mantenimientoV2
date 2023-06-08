@@ -42,7 +42,7 @@ class ProjectUpdate extends Component
 
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('project.show', $this->project->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('project.show', $this->project->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
         $this->validate();
         $project = Project::find($this->project->id);

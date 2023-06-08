@@ -39,9 +39,9 @@ class WorkerController extends Controller
         $messages = [
             'required' => 'Este campo es requerido.',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'max' => 'Este campo deber tener como máximo :max caracteres',
             'unique' => 'Este atributo ya se encuentra registrado',
-            'email' => 'Este campo debe ser un correo electronico valido'
+            'email' => 'Este campo debe ser un correo electrónico válido'
         ];
         $request->validate([
             'id' => 'required| min:8| max:9| unique:users',

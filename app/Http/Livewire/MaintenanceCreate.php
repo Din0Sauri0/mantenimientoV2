@@ -31,7 +31,7 @@ class MaintenanceCreate extends Component
             ]);
             $itemMaintenance->save();
         }
-        return redirect()->route('project.show', $this->project->id)->with('msg', 'Mantencion agendada');
+        return redirect()->route('project.show', $this->project->id)->with('msg', 'Mantención agendada');
     }
 
     public function render()

@@ -15,7 +15,7 @@ class ItemCreate extends Component
     public function messages(){
         return [
             'required' => 'Este campo es requerido',
-            'serial_number.unique' => 'El campo numero de serie ya se encuntra registrado',
+            'serial_number.unique' => 'El campo número de serie ya se encuntra registrado',
         ];
     }
 
@@ -35,7 +35,7 @@ class ItemCreate extends Component
 
     public function create(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('product.show', $this->product->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('product.show', $this->product->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
         $this->validate();
         Item::create([

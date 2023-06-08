@@ -16,7 +16,7 @@
     <table class="table table-sm">
         <thead>
             <tr>
-                <th scope="col">Numero de serie</th>
+                <th scope="col">Número de serie</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Modelo</th>
                 <th scope="col">Ubicación</th>

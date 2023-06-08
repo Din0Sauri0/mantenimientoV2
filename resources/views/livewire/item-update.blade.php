@@ -15,7 +15,7 @@
             <form wire:submit.prevent>
                 @csrf
                 <div class="p-6 text-gray-500 flex flex-col">
-                    <label for="serial_number">Numero de serie</label>
+                    <label for="serial_number">Número de serie</label>
                     <input wire:model="serial_number" type="text" name="serial_number" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('serial_number')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
                     @error('serial_number')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
                 </div>

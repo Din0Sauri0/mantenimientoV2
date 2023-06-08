@@ -3,7 +3,7 @@
     Crea tu cuenta!
 @endsection
 @section('content')
-<div class=" flex flex-col-reverse justify-center items-center p-3 md:grid md:grid-cols-2 lg:px-10 lg:grid lg:grid-cols-2 xl:px-16 xl:grid xl:grid-cols-2">
+<div class="font-mono w-screen h-screen flex flex-col-reverse justify-center items-center p-3 md:grid md:grid-cols-2 lg:px-10 lg:grid lg:grid-cols-2 xl:px-16 xl:grid xl:grid-cols-2">
     <div class='bg-white sm:w-[70%] rounded-xl drop-shadow-md p-5 overflow-auto'>
         <header class='flex justify-center text-2xl font-bold'>
             Rellena el formulario para registrarte.
@@ -77,7 +77,7 @@
         </footer>
     </div>
 
-    <div class="w-full h-full grid items-center justify-center">
+    <div class="w-full xl:h-full lg:h-full md:h-full grid items-center justify-center">
         <img class="rounded-full w-[100%]" src="{{ asset('img/logo2.png') }}" alt="">
     </div>
 </div>

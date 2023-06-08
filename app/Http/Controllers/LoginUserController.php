@@ -18,9 +18,9 @@ class LoginUserController extends Controller
     public function store(Request $request){
         $messages = [
             'required' => 'Este campo es requerido.',
-            'email' => 'El campo correo debe ser una dirección de correo electronico valida',
+            'email' => 'El campo correo debe ser una dirección de correo electrónico válida',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres'
+            'max' => 'Este campo deber tener como máximo :max caracteres'
         ];
         $request->validate([
             'email' => 'required|email',

@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 </head>
 <body class="relative">
-    <div class='w-screen relative lg:h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
+    <div class='w-screen h-screen relative lg:h-screen 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row' style='background-color: #eee;'>
         @auth
         <nav class='bg-orange-400 text-white xl:w-1/6 lg:w-1/6 md:w-1/6 sm:w-1/6 xl:h-full lg:h-full md:full sm:h-full flex flex-col'>
             <div class='w-full flex justify-between p-3 items-center'>

@@ -22,9 +22,8 @@ class ItemStateUpdate extends Component
 
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('maintenance.show', $this->maintenance_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('maintenance.show', $this->maintenance_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
-        
         $item_maintenance = ItemMaintenance::find($this->maintenance_id);
         $maintenance = Maintenance::find($this->maintenance->id);
         $item = Item::find($item_maintenance->item_id);

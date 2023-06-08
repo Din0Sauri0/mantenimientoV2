@@ -30,7 +30,7 @@
             @error('password')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
             <div class='flex items-center w-full'>
                 <input class="mr-2 rounded-full" type="checkbox" name="remember" id="remember">
-                <label for="remember">Recuerdame</label>
+                <label for="remember">Recuérdame</label>
             </div>
             
             <button class='bg-orange-400 hover:bg-orange-500 hover:h-11 rounded-md h-9 text-gray-100 font-bold' type="submit">Iniciar</button>

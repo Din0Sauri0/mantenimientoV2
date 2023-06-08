@@ -30,14 +30,14 @@
                 @error('model')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
             </div>
             <div>
-                <label for="part_number" class="block mb-2 text-sm font-medium text-gray-900">Numero de parte</label>
+                <label for="part_number" class="block mb-2 text-sm font-medium text-gray-900">Número de parte</label>
                 <input value="{{ old('part_number') }}" type="text" id="part_number" name="part_number" placeholder="1.0.01.13.133245-001" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('part_number')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
                 @error('part_number')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
             </div>
         </div>
         <div class="mb-6">
             <label for="characteristics" class="block mb-2 text-sm font-medium text-gray-900">Características</label>
-            <textarea id="characteristics" name="characteristics" rows="8" placeholder="Escribe las características de equipo aqui..." class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('characteristics')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>{{ old('characteristics') }}</textarea>
+            <textarea id="characteristics" name="characteristics" rows="8" placeholder="Escribe las características de equipo aquí..." class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('characteristics')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>{{ old('characteristics') }}</textarea>
             @error('characteristics')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
         </div>
         <div class="mb-2">

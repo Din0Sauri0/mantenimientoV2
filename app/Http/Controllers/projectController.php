@@ -22,7 +22,7 @@ class projectController extends Controller
         $messages = [
             'required' => 'Este campo es requerido.',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'max' => 'Este campo deber tener como máximo :max caracteres',
         ];
         $request->validate([
             'name' => 'required|min:3|max:25',

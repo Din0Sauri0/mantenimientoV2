@@ -17,7 +17,7 @@ class ClientUpdate extends Component
         return [
             'required' => 'Este campo es requerido.',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres',
+            'max' => 'Este campo deber tener como máximo :max caracteres',
             'unique' => 'Ya existe un cliente con este nombre'
         ];
     }
@@ -42,7 +42,7 @@ class ClientUpdate extends Component
 
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('client.show', $this->client->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('client.show', $this->client->id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
         $this->validate();
         $client = Client::find($this->client->id);
@@ -55,3 +55,4 @@ class ClientUpdate extends Component
         return redirect()->route('client');
     }
 }
+            

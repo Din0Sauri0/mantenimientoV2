@@ -10,7 +10,7 @@
         <h5 class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             No se han encontrado trabajadores registrados.
         </h5>
-        <a href="{{ route('worker.create') }}" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aqui para agregar un nuevo!</a>
+        <a href="{{ route('worker.create') }}" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aquí para agregar un nuevo!</a>
     </div>
 </div>
 @else

@@ -41,7 +41,7 @@
                     <h1 class="text-2xl">{{ $product->model }}</h1>
                 </div>
                 <div>
-                    <label class="text-gray-500">Numero de parte.</label>
+                    <label class="text-gray-500">Número de parte.</label>
                     <h1 class="text-2xl">{{ $product->part_number }}</h1>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <h3 class="hidden lg:block">No instalados:&nbsp;</h3><h4>{{ $product->items->whereNull('project_id')->count() }}</h4>
                 </div>
                 <div class="bg-yellow-400 rounded-full lg:w-auto h-7 w-7 p-3 flex justify-center items-center text-white">
-                    <h3 class="hidden lg:block">total:&nbsp;</h3><h4>{{ $product->items->count() }}</h4>
+                    <h3 class="hidden lg:block">Total:&nbsp;</h3><h4>{{ $product->items->count() }}</h4>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                             Nº
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Numero de serie
+                            Número de serie
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Estado
@@ -150,7 +150,7 @@
                                                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Estas
-                                            seguro de elimar este articulo?</h3>
+                                            Seguro de elimar este artículo?</h3>
                                         <button data-modal-hide="popup-modal-representative-{{ $value->id }}"
                                             type="submit"
                                             class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">

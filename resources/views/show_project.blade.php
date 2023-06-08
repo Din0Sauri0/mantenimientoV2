@@ -19,7 +19,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-3 max-w-lg">
+        <div class="bg-white rounded-xl shadow-xl p-5 flex flex-col gap-3 lg:max-w-lg w-auto">
             <div>
                 <label class="text-gray-500 text-sm" for="name_project">Nombre del proyecto</label>
                 <h1 class="text-lg" id="name_project">{{ $project->name }}</h1>
@@ -238,7 +238,7 @@
                                 <h5 class="text-md">{{ $item->model }}</h5>
                             </div>
                             <div>
-                                <label class="text-gray-500 text-sm" for="serial_number">Numero de serie</label>
+                                <label class="text-gray-500 text-sm" for="serial_number">Número de serie</label>
                                 <h5 class="text-md">{{ $item->serial_number }}</h5>
                             </div>
                         </div>

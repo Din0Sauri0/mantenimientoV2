@@ -18,8 +18,8 @@ class AgentUpdate extends Component
         return [
             'required' => 'Este campo es requerido',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres',
-            'email.unique' => 'Este correo electronico ya se encuentra registrado'
+            'max' => 'Este campo deber tener como máximo :max caracteres',
+            'email.unique' => 'Este correo electrónico ya se encuentra registrado'
         ];
     }
 
@@ -45,7 +45,7 @@ class AgentUpdate extends Component
 
     public function update(){
         if(auth()->user()->is_admin == 0){
-            return redirect()->route('client.show', $this->value->client_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+            return redirect()->route('client.show', $this->value->client_id)->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         }
         $this->validate();
         $agent = ClientRepresentative::findOrFail($this->value->id);

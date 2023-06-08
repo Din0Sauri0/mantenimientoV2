@@ -19,7 +19,7 @@ class AdminMiddleware
         if(auth()->check() && auth()->user()->is_admin){
             return $next($request);
         }
-        return redirect()->back()->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opcion');
+        return redirect()->back()->with('unauthorized', 'Usted no tiene los permisos necesarios para realiazar esta opción');
         
     }
 }

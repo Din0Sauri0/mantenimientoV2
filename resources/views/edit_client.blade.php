@@ -13,13 +13,13 @@
         @csrf
         @method('PATCH')
         <div id="institution_information">
-            <h1 class="text-xl">Datos de la institucion</h1>
+            <h1 class="text-xl">Datos de la institución</h1>
             <div class="mb-2">
                 <input value="{{ $client->company_name }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('company_name')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="company_name" id="company_name" placeholder="Nombre o razon social">
                 @error('company_name') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">
-                <input value="{{ $client->address }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('address')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="address" id="address" placeholder="Direccion">
+                <input value="{{ $client->address }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('address')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="text" name="address" id="address" placeholder="Dirección">
                 @error('address') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">
@@ -36,7 +36,7 @@
                 @error('contact_last_name') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">
-                <input value="{{ $client->contact_number }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('contact_number')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="tel" name="contact_number" id="contact_number" placeholder="Numero de contacto">
+                <input value="{{ $client->contact_number }}" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('contact_number')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' type="tel" name="contact_number" id="contact_number" placeholder="Número de contacto">
                 @error('contact_number') <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p> @enderror
             </div>
             <div class="mb-2">

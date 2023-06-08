@@ -18,8 +18,8 @@
                     </button>
                     <div class="pt-8">
                         <div class="px-6 text-gray-500 flex flex-col">
-                            <label class="text-xl" for="state">Introdusca el numero de serie, para confirmar la mantención del equipo</label>
-                            <input wire:model="state" type="text" name="state" class='bg-gray-100 border-orange-400 text-sm mt-2 rounded-lg block w-full p-2.5 @error('state')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' placeholder="Numero de serie">
+                            <label class="text-xl" for="state">Introduzca el número de serie, para confirmar la mantención del equipo</label>
+                            <input wire:model="state" type="text" name="state" class='bg-gray-100 border-orange-400 text-sm mt-2 rounded-lg block w-full p-2.5 @error('state')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror' placeholder="Número de serie">
                         </div>
                         <div class="flex justify-between gap-2 text-white p-6">
                             <button wire:click="update" class="bg-orange-400 p-2 rounded-lg w-full" type="submit">Aceptar</button>

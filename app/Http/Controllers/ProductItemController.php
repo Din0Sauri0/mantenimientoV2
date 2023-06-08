@@ -12,8 +12,8 @@ class ProductItemController extends Controller
         $messages = [
             'required' => 'Este campo es requerido.',
             'min' => 'Este campo debe contar con al menos :min caracteres',
-            'max' => 'Este campo deber tener como maximo :max caracteres',
-            'unique' => 'Este numero de serie ya ha sido registrado'
+            'max' => 'Este campo deber tener como máximo :max caracteres',
+            'unique' => 'Este número de serie ya ha sido registrado'
         ];
         $request->validate([
             'model' => 'required',

@@ -10,7 +10,7 @@
         <h5 class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             No se han encontrado productos registrados.
         </h5>
-        <a href="{{ route('product.create') }}" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aqui para agregar un nuevo!</a>
+        <a href="{{ route('product.create') }}" class="font-normal text-gray-700 dark:text-gray-400 text-center hover:text-blue-500 hover:underline">Pincha aquí para agregar un nuevo!</a>
     </div>
 </div>
 @else
@@ -47,7 +47,7 @@
             <div class="text-clip max-w-xs overflow-y-scroll max-h-20">
                 <h1 class="text-sm">Modelo: {{ $product->model }}</h1>
                 <h1 class="text-sm">P/N: {{ $product->part_number }}</h1>
-                <h1 class="text-sm">Fecha de creacion: {{ $product->created_at }}</h1>
+                <h1 class="text-sm">Fecha de creación: {{ $product->created_at }}</h1>
                 <h1 class="text-sm">Descripción.</h1>
                 <h1 class="text-sm">{!! nl2br($product->description) !!}</h1>
             </div>

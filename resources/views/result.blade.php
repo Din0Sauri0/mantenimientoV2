@@ -17,7 +17,7 @@
                         estado
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Numero de serie
+                        Número de serie
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Modelo
@@ -48,7 +48,7 @@
                                             </svg>    
                                         </button>  
                                     @endif
-                                    @livewire('item-state-update', ['maintenance_id' => $itemmaintenance->id])
+                                    @livewire('item-state-update', ['maintenance_id' => $itemmaintenance->id, 'maintenance' => $maintenance])
                                 @endforeach
                             </td>
                             <td class="px-6 py-4">
