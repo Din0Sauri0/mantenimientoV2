@@ -27,7 +27,7 @@ class AgentUpdate extends Component
         'name' => 'required|min:3|max:15',
         'last_name' => 'required|min:3|max:25',
         'phone' => 'required|min:9|max:9',
-        'email' => 'required|unique:client_representatives|min:3|max:25'
+        'email' => 'required|min:3|max:25'
     ];
 
 

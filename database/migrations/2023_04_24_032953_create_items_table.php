@@ -26,7 +26,7 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('products')
                 ->cascadeOnUPdate()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
     
             $table->foreignId('project_id')
                 ->nullable()

@@ -23,7 +23,7 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('projects')
                 ->cascadeOnUpdate()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
         });
     }
 

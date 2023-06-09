@@ -23,10 +23,9 @@ class ClientUpdate extends Component
     }
 
     protected $rules = [
-        'company_name' => 'required|min:5|max:100|unique:clients',
+        'company_name' => 'required|min:5|max:100',
         'address' => 'required|min:4|max:100',
         'giro' => 'required|min:4|max:100',
-        'img' => 'required'
     ];
 
     public function mount($client){
