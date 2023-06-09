@@ -3,7 +3,7 @@ import Dropzone from "dropzone"
 
 Dropzone.autodiscover = false;
 const dropzone = new Dropzone('#dropzone', {
-    dicDefaultMessage: 'Sube tu imagen aquí!',
+    dictDefaultMessage: 'Sube tu imagen aquí!',
     acceptFiles: '.png,.jpg,.jpeg,.gif',
     addRemoveLinks: true,
     dicRemoveFile: 'Borrar archivo',

@@ -29,7 +29,7 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('clients')
                 ->cascadeOnUpdate()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
         });
     }
     

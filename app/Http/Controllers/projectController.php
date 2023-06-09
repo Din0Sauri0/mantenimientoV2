@@ -25,7 +25,7 @@ class projectController extends Controller
             'max' => 'Este campo deber tener como máximo :max caracteres',
         ];
         $request->validate([
-            'name' => 'required|min:3|max:25',
+            'name' => 'required|min:3|max:100',
             'description' => 'required',
             'client' => 'required',
             'client_repre' => 'required',

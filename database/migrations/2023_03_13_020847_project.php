@@ -25,12 +25,12 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('clients')
                 ->cascadeOnUpdate()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
             $table->foreignId('agent_id')
                 ->nullable()
                 ->constrained('client_representatives')
                 ->cascadeOnUpdate()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
         });
     }
 

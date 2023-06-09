@@ -11,11 +11,13 @@
         @csrf
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="name">Nombre del proyecto</label>
-            <input value="{{ old('name') }}" type="text" name="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('namne')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
+            <input value="{{ old('name') }}" type="text" name="name" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('nane')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>
+            @error('name')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
         </div>
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="description">Descripción del proyecto</label>
             <textarea name="description" id="description" cols="40" rows="5" class='bg-gray-100 border-orange-400 text-sm rounded-lg block w-full p-2.5 @error('description')bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @enderror'>{{ old('description') }}</textarea>
+            @error('description')<p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> {{ $message }}</p>@enderror
         </div>
         <div class="mb-6 flex flex-col">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="client">Cliente</label>
